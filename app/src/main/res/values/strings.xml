@@ -1,0 +1,135 @@
+<resources>
+    <string name="app_name">Donation System</string>
+    <string-array name="listnav">
+        <item>Home</item>
+        <item>Profile</item>
+        <item>Settings</item>
+
+    </string-array>
+    <string-array name="signup">
+        <item>Hospital</item>
+        <item>Donner</item>
+    </string-array>
+    <string-array name="citys">
+        <item>Alexandria</item>
+        <item>Aswan</item>
+        <item>Asyut</item>
+        <item>Beheira</item>
+        <item>Beni Suef</item>
+        <item>Cairo</item>
+        <item>Dakahlia</item>
+        <item>Damietta</item>
+        <item>Faiyum</item>
+        <item>Gharbia</item>
+        <item>Giza</item>
+        <item>Ismailia</item>
+        <item>Kafr El Sheikh</item>
+        <item>Luxor</item>
+        <item>Matruh</item>
+        <item>Minya</item>
+        <item>Monufia</item>
+        <item>New Valley</item>
+        <item>North Sinai</item>
+        <item>Port Said</item>
+        <item>Qalyubia</item>
+        <item>Qena</item>
+        <item>Red Sea</item>
+        <item>Sharqia</item>
+        <item>Sohag</item>
+        <item>South Sinai</item>
+        <item>Suez</item>
+    </string-array>
+    <string-array name="lan">
+        <item>English</item>
+        <item>Arabic</item>
+    </string-array>
+    <string-array name="noti_type">
+        <item>Blood</item>
+        <item>Money</item>
+        <item>Other</item>
+    </string-array>
+    <string-array name="state">
+        <item>Dangerous</item>
+        <item>Medium</item>
+        <item>For Blood bank</item>
+    </string-array>
+    <string name="ab1">This app is designed to help patients and poor people by donating blood or money to them to treat them and to pay hospital expenses,\n we can donate Blood to blood banks in a state of lack of blood\n Also we can donate to hospitals that need to buy some medical equipment to help patients...</string>
+    <string name="ab2">Hospitals send messages to users asking them to donate. In cases of serious injuries that require blood, messages are sent to people close to the hospital to ensure their quick arrival to save the life of the injured. the message contains all the information that the donor needs.</string>
+    <string name="ab3">We are a group of people who have developed this program for a humanitarian goal only and not for profit purposes. </string> <string name="ab4">You can communicate with us or send us your opinions and suggestions by sending us a message.</string>
+
+
+    <string name="bi"> Blood and Platelet Donors Must:-\n 1-Be in good general health and feeling well\n 2-Be at least 17-years-old\n 3-Weigh at least 55kg\n 4-Donate within a period of 3 months after his previous donation\n 5-Does not suffer from any of the types of anmia except iron deficiency\n 6-There are no symptoms of heart disease, chronic hypertension, liver swelling, pregnancy, bleeding and disturbance in thyroid gland, renal failure, diabetes, viral hepatitis and chronic chest diseases</string>
+    <string name="mi"> 1-Make sure you donate money to a donor that deserves to be donated.\n 2-You can call the hospital if you want to know if the person actually got me either. Enough or still needs help\n 3-Some hospitals need a trust to donate money, so you will always make sure this hospital really needs money to help patients, or for minor needs.\n 4-You can also contact the bank to check the account number for the donation\n </string>
+    <string name="title_activity_home">Home</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_profile">Profile</string>
+    <string name="title_activity_reports">Reports</string>
+    <string name="title_activity_about">About</string>
+    <string name="title_activity_make__notification1">Management</string>
+    <string name="string_choose_file">Choose File</string>
+    <string name="string_upload_image">Upload Image</string>
+    <string name="string_view_image">View Image</string>
+    <string name="title_activity_view_image">ViewImage</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="title_activity_main__home">Main_Home</string>
+
+
+    <string name="title_activity_hospital_post">Hospital_post</string>
+
+    <string name="Select_Report">Select Report</string>
+    <string name="Send_Report">Send Report</string>
+    <string name="email_donar">Enter Donner Email</string>
+    <string name="share">Share</string>
+    <string name="map">Map</string>
+    <string name="blood">Blood</string>
+    <string name="money">Money</string>
+    <string name="other">Other</string>
+    <string name="care">I Care</string>
+    <string name="send">Send</string>
+    <string name="Description">Description</string>
+    <string name="message">Your Message</string>
+    <string name="What_is_this_app">What is this app ?</string>
+    <string name="What_is_advantage">What are the advantages offered by this app ?</string>
+    <string name="who_are_we">Who we are ?</string>
+    <string name="how_to_contact">How to contact us ?</string>
+    <string name="Contact_Us">Contact Us</string>
+    <string name="Post_Type">Post Type</string>
+    <string name="Complain">Complain</string>
+    <string name="Instructions">Instructions</string>
+    <string name="Send_Notification">Send Notification</string>
+    <string name="Name">Name:</string>
+    <string name="Email">Email:</string>
+    <string name="Age">Age:</string>
+    <string name="Password">Password:</string>
+    <string name="Confirm_Password">Confirm Password:</string>
+    <string name="Location">Location:</string>
+    <string name="Get_Location">Get Location</string>
+    <string name="Save">Save</string>
+    <string name="Update">Update</string>
+    <string name="Delete">Delete</string>
+    <string name="City">City</string>
+    <string name="Discretion">Discretion</string>
+    <string name="Title">Title</string>
+    <string name="Donation_System">Donation System</string>
+    <string name="Sign_up">Sign up</string>
+    <string name="Profile">Profile</string>
+    <string name="Preview">Preview</string>
+    <string name="Change_password">Change password</string>
+    <string name="up">Update My Current Location</string>
+    <string name="Enable_Notification">Enable Notification</string>
+    <string name="Sign_up_as">Sign up as</string>
+    <string name="Hospital_Name">Hospital Name</string>
+    <string name="Report_Date">Report Date</string>
+    <string name="Last_Donation">Last Donation</string>
+    <string name="Doctor_Name">Doctor Name</string>
+    <string name="fblood">First: Blood</string>
+    <string name="smoney">Second: Money</string>
+    <string name="Remember_Me">Remember Me</string>
+    <string name="Hospital">Hospital</string>
+    <string name="Donner">Donner</string>
+    <string name="important">important instructions to follow before donating either blood or money</string>
+</resources>

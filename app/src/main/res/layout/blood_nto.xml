@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="7.5dp"
+    android:background=" #fff ">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingTop="16dp"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <ImageView
+            android:layout_width="100px"
+            android:layout_height="100px"
+            android:layout_marginRight="7.5dp"
+            android:background="#fff"
+            android:src="@mipmap/ww"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+        <TextView
+            android:id="@+id/hos_nam_blood"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hospital name"
+            android:layout_marginRight="30dp"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Widget.Switch"/>
+        <TextView
+            android:id="@+id/hos_tim_blood"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Time"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"/>
+        </LinearLayout>
+        </LinearLayout>
+    <TextView
+        android:id="@+id/hos_doc_name_blood"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Notification doctor Name"
+        android:textAppearance="@style/Base.TextAppearance.AppCompat"
+        android:layout_marginTop="5dp"/>
+    <TextView
+        android:id="@+id/hos_state_blood"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Notification State"
+        android:textAppearance="@style/Base.TextAppearance.AppCompat"
+        android:layout_marginTop="5dp"/>
+    <TextView
+        android:id="@+id/hos_body_blood"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Notification Body"
+        android:textAppearance="@style/Base.TextAppearance.AppCompat"
+        android:layout_marginTop="5dp"/>
+</LinearLayout>
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="10dp"
+        android:background="#E44F38" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:drawableLeft="@drawable/ic_favorite_border_black_24dp"
+            android:paddingLeft="20dp"
+            android:id="@+id/blood_donate"
+            android:text="@string/care"
+            android:textStyle="bold"
+            android:textColor="#E44F38"
+            android:background=" #fff "/>
+        <View
+            android:layout_width="1dp"
+            android:layout_height="fill_parent"
+            android:background="#E44F38" />
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:id="@+id/blood_map"
+            android:drawableLeft="@drawable/ic_place_black_24dp"
+            android:paddingLeft="20dp"
+            android:textColor="#E44F38"
+            android:background=" #fff "
+            android:text="@string/map"
+            android:paddingRight="20dp"
+            android:textStyle="bold"
+            />
+        <View
+            android:layout_width="1dp"
+            android:layout_height="fill_parent"
+            android:background="#E44F38" />
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:id="@+id/blood_share"
+            android:drawableLeft="@drawable/ic_menu_share"
+            android:paddingLeft="20dp"
+            android:textColor="#E44F38"
+            android:background=" #fff "
+            android:text="@string/share"
+            android:textStyle="bold"
+            />
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="#E44F38"
+    tools:context="momen.shahen.com.gps_cloudbaseddonationsystemproject.MainActivity">
+
+
+<ImageView
+    android:layout_width="match_parent"
+    android:layout_marginTop="45dp"
+    android:layout_height="wrap_content"
+    android:src="@mipmap/log"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/Email"
+        android:textColor="#fff"
+        android:paddingLeft="15dp"
+        android:id="@+id/loginemail"
+        android:layout_marginTop="20dp"
+        android:textColorHint="#EDEDED"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#fff"
+        android:paddingLeft="15dp"
+        android:textColorHint="#EDEDED"
+        android:id="@+id/loginpass"
+        android:hint="@string/Password"/>
+    <CheckBox
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#fff"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:textSize="20sp"
+        android:textColorHint="#EDEDED"
+        android:id="@+id/remember_me"
+        android:text="Remember Me"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="20dp"
+        android:layout_marginTop="20dp">
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/Hospital"
+        android:textSize="20sp"
+        android:textColor="#E44F38"
+        android:id="@+id/hos"
+        android:layout_weight="1"
+        android:textAllCaps="false"
+        android:background="#EDEDED"
+        android:layout_marginRight="5dp"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/Donner"
+        android:layout_marginLeft="5dp"
+        android:id="@+id/donne"
+        android:textSize="20sp"
+        android:textColor="#E44F38"
+        android:textAllCaps="false"
+        android:layout_weight="1"
+        android:background="#EDEDED"/>
+    </LinearLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center">
+
+        <TextView
+            android:id="@+id/signup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="18dp"
+            android:text="@string/Sign_up"
+            android:textAlignment="center"
+            android:textAllCaps="false"
+            android:textColor="#EDEDED"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+    </RelativeLayout>
+</LinearLayout>

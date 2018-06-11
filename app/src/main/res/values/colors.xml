@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#E44F38</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#333</color>
+
+    <color name="colorTextPrimary">#FFFFFF</color>
+    <color name="colorTextDisable">#66FFFFFF</color>
+    <color name="colorgray">#EDEDED</color>
+
+    <color name="trans">#80E44F38</color>
+    <color name="back_post">#80ffaa99</color>
+    <color name="black">#000</color>
+    <color name="back">#99ccff</color>
+
+</resources>

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    style="@style/AppTheme"
+    android:paddingLeft="11.5dp"
+    android:paddingRight="11.5dp"
+    android:background="#fff">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="@string/Enable_Notification"
+            android:textSize="25sp"
+            android:textColor="#000"
+            android:layout_marginLeft="10dp"/>
+        <ToggleButton
+            android:layout_width="match_parent"
+            android:layout_marginLeft="20dp"
+            android:background="@color/colorgray"
+            android:textColor="@color/colorPrimary"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="20dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="Language"
+            android:textSize="25sp"
+            android:layout_weight="1"
+            android:textColor="#000"
+            android:layout_marginLeft="10dp"/>
+        <Spinner
+            android:id="@+id/spinner1"
+            android:layout_weight="1"
+            android:entries="@array/lan"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="@android:drawable/btn_dropdown"
+            android:spinnerMode="dropdown"/>
+    </LinearLayout>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/Change_password"
+        android:background="@color/colorgray"
+        android:textColor="@color/colorPrimary"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:id="@+id/change_pass"
+        android:textAllCaps="false"
+        android:layout_marginBottom="8.5dp"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/up"
+        android:textStyle="bold"
+        android:background="@color/colorgray"
+        android:textColor="@color/colorPrimary"
+        android:id="@+id/button_location"
+        android:textSize="20sp"
+        android:textAllCaps="false"/>
+
+</LinearLayout>

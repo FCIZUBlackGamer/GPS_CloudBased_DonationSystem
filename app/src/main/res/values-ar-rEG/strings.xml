@@ -1,0 +1,83 @@
+<resources>
+    <string name="app_name">نظام تبرع</string>
+    <string-array name="listnav">
+        <item>الرئيسية</item>
+        <item>الشخصية</item>
+        <item>الاعدادات</item>
+
+    </string-array>
+    <string-array name="signup">
+        <item>مستشفى</item>
+        <item>متبرع</item>
+    </string-array>
+    <string-array name="citys">
+        <item>الاسكندرية</item>
+        <item>أسوان</item>
+        <item>أسيوط</item>
+        <item>البحيرة</item>
+        <item>بنى سويف</item>
+        <item>القاهرة</item>
+        <item>الدقهلية</item>
+        <item>دميا</item>
+        <item>الفيوم</item>
+        <item>الغربية</item>
+        <item>الجيزه</item>
+        <item>الاسماعليه</item>
+        <item>كفر الشيخ</item>
+        <item>الأقصر</item>
+        <item>مطروح</item>
+        <item>المينا</item>
+        <item>المنوفية</item>
+        <item>نيو فالى</item>
+        <item>شمال سيناء</item>
+        <item>بورسعيد</item>
+        <item>القليوبية</item>
+        <item>قنا</item>
+        <item>البحر الاحمر</item>
+        <item>الشرقية</item>
+        <item>سوهاج</item>
+        <item>شمال سيناء</item>
+        <item>السويس</item>
+    </string-array>
+    <string-array name="lan">
+        <item>الانجليزيه</item>
+        <item>العربيه</item>
+    </string-array>
+    <string-array name="noti_type">
+        <item>دم</item>
+        <item>نقود</item>
+        <item>أخرى</item>
+    </string-array>
+    <string-array name="state">
+        <item>خطيرة</item>
+        <item>متوسطة</item>
+        <item>لبنك الدم</item>
+    </string-array>
+    <string name="ab1"> تم تصميم هذا التطبيق لمساعده المرضي الذين يحتاجون الي التبرع بالدم أو المال لهم لعلاجهم و لسداد نفقات المستشفي والعلاج,\n يمكننا التبرع بالدم لبنوك الدم في حاله نقص الدم\n كما يمكننا التبرع للمستشفيات التي تحتاج إلى شراء بعض المعدات الطبية لمساعده المرضي...</string>
+    <string name="ab2"> ترسل المستشفيات رسائل إلى المستخدمين تطلب منهم التبرع. وفي حالات الإصابات الخطيرة التي تتطلب الدم ، ترسل الرسائل إلى الأشخاص القريبين من المستشفى لضمان وصولهم السريع لإنقاذ حياه المصابين. ، تحتوي الرسالة علي كافة المعلومات التي يحتاجها المتبرع.</string>
+    <string name="ab3"> نحن مجموعه من المبرمجين قمنا بتصميم هذا البرنامج لهدف انساني فقط وليس لغرض الربح. </string>
+    <string name="ab4"> يمكنك التواصل معنا أو إرسال الآراء والاقتراحات الخاصة بك عن طريق إرسال رسالة لنا.</string>
+
+
+    <string name="bi"> يجب علي المتبرعين بالدم:-\n 1- الشعور بصحه جيده \n 2- الايقل عمره عن 17 عام\n 3- الا يقل وزنه عن 55 كجم\n 5- الن تكون اخر تبرع قام به منذ فتره لا تقل عن 5 اشهر\n 5- لا يعاني من اي نوع من انواع الانميا ما عدا نقص الحديد \n 6-لا توجد اعراض لامراض القلب ، وارتفاع ضغط الدم المزمن ، وتورم الكبد ، والحمل ، والنزيف والاضطراب في الغدة الدرقية ، والفشل الكلوي ، والسكري ، والتهاب الكبد الفيروسي وامراض الصدر المزمنة </string>
+    <string name="mi"> 1- تأكد من انك تتبرع للشخص الذي يستحق.\n يمكنك التواصل مع المستشفي لمعرفه اذا ما كان المريض يحتاج للمساعده ام لا.\n 3-بعض المستشفيات تحتاج إلى الثقة في التبرع بالمال ، لذلك سوف تاكد دائما هذا المستشفى يحتاج حقا المال لمساعده المرضي ، أو لتلبيه اغراض اخري.\n 4- يمكنك الاتصال بالبنك لتفقد الحساب الخاص بالتبرع للتأكد من الحساب الذي تتبرع من اجله.\n </string>
+    <string name="title_activity_home">الرئيسية</string>
+
+    <string name="navigation_drawer_open">فتح المنسدلة</string>
+    <string name="navigation_drawer_close">غلق المنسدلة</string>
+
+    <string name="action_settings">الاعدادات</string>
+    <string name="title_activity_profile">الشخصية</string>
+    <string name="title_activity_reports">تقارير</string>
+    <string name="title_activity_about">عن</string>
+    <string name="title_activity_make__notification1">الادارة</string>
+    <string name="string_choose_file">اخيار صورة</string>
+    <string name="string_upload_image">رفع الصور</string>
+    <string name="string_view_image">عرض الصور</string>
+    <string name="title_activity_view_image">عرض الصور</string>
+    <string name="title_activity_maps">خريطه</string>
+    <string name="title_activity_main__home">العامة</string>
+
+
+    <string name="title_activity_hospital_post">رسائل المستشفى</string>
+</resources>

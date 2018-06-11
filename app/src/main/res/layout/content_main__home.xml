@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="momen.shahen.com.gps_cloudbaseddonationsystemproject.Main_Home"
+    tools:showIn="@layout/app_bar_main__home">
+
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="0dp"
+    android:layout_weight="6">
+    <ImageView
+        android:layout_width="500px"
+        android:layout_height="450px"
+        android:layout_marginTop="50dp"
+        android:layout_centerHorizontal="true"
+        android:src="@mipmap/logo_color"/>
+</RelativeLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="20dp"
+        android:layout_marginTop="20dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/Complain"
+                android:textSize="15sp"
+                android:textColor="#E44F38"
+                android:id="@+id/complain"
+                android:layout_weight="1"
+                android:textAllCaps="false"
+                android:background="#EDEDED"
+                android:layout_marginRight="5dp"/>
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/map"
+                android:layout_marginLeft="5dp"
+                android:id="@+id/our_map"
+                android:textSize="15sp"
+                android:textColor="#E44F38"
+                android:textAllCaps="false"
+                android:layout_weight="1"
+                android:background="#EDEDED"/>
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/Instructions"
+                android:layout_marginLeft="10dp"
+                android:id="@+id/inst"
+                android:textSize="15sp"
+                android:textColor="#E44F38"
+                android:textAllCaps="false"
+                android:layout_weight="1"
+                android:background="#EDEDED"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</LinearLayout>
