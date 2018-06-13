@@ -82,7 +82,7 @@
 
     <string name="Select_Report">Select Report</string>
     <string name="Send_Report">Send Report</string>
-    <string name="email_donar">Enter Donner Email</string>
+    <string name="email_donor">Enter Donor Email</string>
     <string name="share">Share</string>
     <string name="map">Map</string>
     <string name="blood">Blood</string>
@@ -130,6 +130,6 @@
     <string name="smoney">Second: Money</string>
     <string name="Remember_Me">Remember Me</string>
     <string name="Hospital">Hospital</string>
-    <string name="Donner">Donner</string>
+    <string name="Donor">Donor</string>
     <string name="important">important instructions to follow before donating either blood or money</string>
 </resources>

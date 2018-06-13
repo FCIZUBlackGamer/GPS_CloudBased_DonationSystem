@@ -80,4 +80,59 @@
 
 
     <string name="title_activity_hospital_post">رسائل المستشفى</string>
+
+    <string name="Select_Report">اختيار تقرير</string>
+    <string name="Send_Report">ارسال تقرير</string>
+    <string name="email_donor">ادخل ايميل المتبرع</string>
+    <string name="share">مشاركه</string>
+    <string name="map">الخريطه</string>
+    <string name="blood">طلبات الدم</string>
+    <string name="money">طلبات النقود</string>
+    <string name="other">اخري</string>
+    <string name="care">اهتم به</string>
+    <string name="send">ارسال</string>
+    <string name="Description">الوصف</string>
+    <string name="message">ادخل الرساله</string>
+    <string name="What_is_this_app">ما هذا التطبيق ؟</string>
+    <string name="What_is_advantage">ما هي الخدمات المقدمه ؟</string>
+    <string name="who_are_we">من نحن ؟</string>
+    <string name="how_to_contact">كيف تتواصل معنا ؟</string>
+    <string name="Contact_Us">اتواصل معنا</string>
+    <string name="Post_Type">نوع الرساله</string>
+    <string name="Complain">الشكوي</string>
+    <string name="Instructions">تعليمات</string>
+    <string name="Send_Notification">ارسال اشعار</string>
+    <string name="Name">الاسم:</string>
+    <string name="Email">الايميل:</string>
+    <string name="Age">العمر:</string>
+    <string name="Password">الرقم السري :</string>
+    <string name="Confirm_Password">تأكيد الرقم السري:</string>
+    <string name="Location">الموقع:</string>
+    <string name="Get_Location">احصل علي الموقع</string>
+    <string name="Save">حفظ</string>
+    <string name="Update">تحديث</string>
+    <string name="Delete">حذف</string>
+    <string name="City">المدينه</string>
+    <string name="Discretion">الوصف</string>
+    <string name="Title">العنوان</string>
+    <string name="Donation_System">نداء للتبرع</string>
+    <string name="Sign_up">تسجيل</string>
+    <string name="Profile">الصفحه الشخصيه</string>
+    <string name="Preview">عرض</string>
+    <string name="Change_password">تغير الرقم السري</string>
+    <string name="up">تحديث الموقع الحالي</string>
+    <string name="Enable_Notification">تمكين ارسال الاشعارات</string>
+    <string name="Sign_up_as">تسجيل الدخول كـ </string>
+    <string name="Hospital_Name">اسم المستشفي</string>
+    <string name="Report_Date">تاريخ التقرير</string>
+    <string name="Last_Donation">اخر تبرع</string>
+    <string name="Doctor_Name">اسم الدكتور</string>
+    <string name="fblood">اولا: الدم</string>
+    <string name="smoney"> ثانيا: النقود</string>
+    <string name="Remember_Me">تذكر تسجيل الدخول</string>
+    <string name="Hospital">مستشفي</string>
+    <string name="Donor">متبرع</string>
+    <string name="important">تعليمات مهمه قبل التبرع بالنقود او الاموال</string>
+
+
 </resources>
