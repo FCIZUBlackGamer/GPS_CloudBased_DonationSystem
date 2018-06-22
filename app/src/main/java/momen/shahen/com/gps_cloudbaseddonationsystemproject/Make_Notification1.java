@@ -1,5 +1,6 @@
 package momen.shahen.com.gps_cloudbaseddonationsystemproject;
 
+import android.app.AliasActivity;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -190,7 +191,7 @@ public class Make_Notification1 extends AppCompatActivity
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 text = spinner.getSelectedItem().toString();
 
-                if (text.equals("Blood")) {
+                if (text.equals("blood")) {
                     for (Fragment fragment : getSupportFragmentManager().getFragments()) {
                         getSupportFragmentManager().beginTransaction().remove(fragment).commit();
                     }
@@ -199,7 +200,7 @@ public class Make_Notification1 extends AppCompatActivity
                     newFragment = new Make_Blood_noti();
                     transaction.replace(R.id.noti_type, newFragment).commit();
 
-                } else if (text.equals("Money")) {
+                } else if (text.equals("money")) {
                     for (Fragment fragment : getSupportFragmentManager().getFragments()) {
 
                         getSupportFragmentManager().beginTransaction().remove(fragment).commit();
@@ -209,7 +210,7 @@ public class Make_Notification1 extends AppCompatActivity
                     newFragment = new Make_money_noti();
                     transaction.replace(R.id.noti_type, newFragment).commit();
 
-                } else if (text.equals("Other")) {
+                } else if (text.equals("other")) {
                     for (Fragment fragment : getSupportFragmentManager().getFragments()) {
 
                         getSupportFragmentManager().beginTransaction().remove(fragment).commit();
@@ -239,8 +240,8 @@ public class Make_Notification1 extends AppCompatActivity
             assert connManager != null;
             mWifi = connManager.getNetworkInfo(ConnectivityManager.TYPE_WIFI);
 
-            if (mWifi.isConnected()) {
-                url = "http://momenshaheen.16mb.com/InsertBloodNotification.php";
+//            if (mWifi.isConnected()) {
+                url = "https://gradproject2018.000webhostapp.com/Donation%20System/InsertBloodNotification.php";
                 emailkey = "email=";
                 contentkey = "&content=";
                 doctornamekey = "&doctorname=";
@@ -282,38 +283,38 @@ public class Make_Notification1 extends AppCompatActivity
 
                 Thread thread = new Thread(runnable);
                 thread.start();
-            } else {
-                AlertDialog.Builder builder;
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                    builder = new AlertDialog.Builder(this, android.R.style.Theme_Material_Dialog_Alert);
-                } else {
-                    builder = new AlertDialog.Builder(this);
-                }
-                builder.setTitle("Error Message!")
-                        .setMessage("Make Sure You Are Connected To Wifi!")
-                        .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
-                            public void onClick(DialogInterface dialog, int which) {
-                                // continue with delete
-                            }
-                        })
-                        .setNegativeButton(android.R.string.no, new DialogInterface.OnClickListener() {
-                            public void onClick(DialogInterface dialog, int which) {
-                                // do nothing
-                            }
-                        })
-                        .setIcon(android.R.drawable.ic_dialog_alert)
-                        .show();
-            }
+//            } else {
+//                AlertDialog.Builder builder;
+//                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+//                    builder = new AlertDialog.Builder(this, android.R.style.Theme_Material_Dialog_Alert);
+//                } else {
+//                    builder = new AlertDialog.Builder(this);
+//                }
+//                builder.setTitle("Error Message!")
+//                        .setMessage("Make Sure You Are Connected To Wifi!")
+//                        .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
+//                            public void onClick(DialogInterface dialog, int which) {
+//                                // continue with delete
+//                            }
+//                        })
+//                        .setNegativeButton(android.R.string.no, new DialogInterface.OnClickListener() {
+//                            public void onClick(DialogInterface dialog, int which) {
+//                                // do nothing
+//                            }
+//                        })
+//                        .setIcon(android.R.drawable.ic_dialog_alert)
+//                        .show();
+//            }
         } else if (getIntent().getStringExtra("Money_Content") != null) {
             Toast.makeText(Make_Notification1.this, getIntent().getStringExtra("Money_Content")
                     , Toast.LENGTH_SHORT).show();
 
-            connManager = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
-            assert connManager != null;
-            mWifi = connManager.getNetworkInfo(ConnectivityManager.TYPE_WIFI);
-
-            if (mWifi.isConnected()) {
-                url = "http://momenshaheen.16mb.com/InsertMoneyNotification.php";
+//            connManager = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+//            assert connManager != null;
+//            mWifi = connManager.getNetworkInfo(ConnectivityManager.TYPE_WIFI);
+//
+//            if (mWifi.isConnected()) {
+                url = "https://gradproject2018.000webhostapp.com/Donation%20System/InsertMoneyNotification.php";
                 emailkey = "email=";
                 contentkey = "&content=";
                 try {
@@ -351,49 +352,49 @@ public class Make_Notification1 extends AppCompatActivity
 
                 Thread thread = new Thread(runnable);
                 thread.start();
-            } else {
-                AlertDialog.Builder builder;
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                    builder = new AlertDialog.Builder(this, android.R.style.Theme_Material_Dialog_Alert);
-                } else {
-                    builder = new AlertDialog.Builder(this);
-                }
-                builder.setTitle("Error Message!")
-                        .setMessage("Make Sure You Are Connected To Wifi!")
-                        .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
-                            public void onClick(DialogInterface dialog, int which) {
-                                // continue with delete
-                            }
-                        })
-                        .setNegativeButton(android.R.string.no, new DialogInterface.OnClickListener() {
-                            public void onClick(DialogInterface dialog, int which) {
-                                // do nothing
-                            }
-                        })
-                        .setIcon(android.R.drawable.ic_dialog_alert)
-                        .show();
-            }
+//            } else {
+//                AlertDialog.Builder builder;
+//                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+//                    builder = new AlertDialog.Builder(this, android.R.style.Theme_Material_Dialog_Alert);
+//                } else {
+//                    builder = new AlertDialog.Builder(this);
+//                }
+//                builder.setTitle("Error Message!")
+//                        .setMessage("Make Sure You Are Connected To Wifi!")
+//                        .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
+//                            public void onClick(DialogInterface dialog, int which) {
+//                                // continue with delete
+//                            }
+//                        })
+//                        .setNegativeButton(android.R.string.no, new DialogInterface.OnClickListener() {
+//                            public void onClick(DialogInterface dialog, int which) {
+//                                // do nothing
+//                            }
+//                        })
+//                        .setIcon(android.R.drawable.ic_dialog_alert)
+//                        .show();
+//            }
         } else if (getIntent().getStringExtra("Point_Sponser") != null) {
             Toast.makeText(Make_Notification1.this, getIntent().getStringExtra("Point_Sponser")
                             + getIntent().getStringExtra("Point_Content")
                     , Toast.LENGTH_SHORT).show();
 
-            connManager = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
-            assert connManager != null;
-            mWifi = connManager.getNetworkInfo(ConnectivityManager.TYPE_WIFI);
-
-            if (mWifi.isConnected()) {
-                url = "http://momenshaheen.16mb.com/InsertPointNotification.php";
+//            connManager = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+//            assert connManager != null;
+//            mWifi = connManager.getNetworkInfo(ConnectivityManager.TYPE_WIFI);
+//
+//            if (mWifi.isConnected()) {
+                url = "https://gradproject2018.000webhostapp.com/Donation%20System/InsertOtherNotification.php";
                 emailkey = "email=";
-                sponserkey = "&sponser=";
+//                sponserkey = "&sponser=";
                 contentkey = "&content=";
                 try {
-                    connectionparamters = emailkey + URLEncoder.encode(get_email, "UTF-8") +
-                            sponserkey + URLEncoder.encode(getIntent().getStringExtra("Point_Sponser"), "UTF-8") + contentkey
+                    connectionparamters = emailkey + URLEncoder.encode(get_email, "UTF-8") /*+
+                            sponserkey + URLEncoder.encode(getIntent().getStringExtra("Point_Sponser"), "UTF-8") */+ contentkey
                             + URLEncoder.encode(getIntent().getStringExtra("Point_Content"), "UTF-8");
                     paramtersbyt = connectionparamters.getBytes("UTF-8");
 
-                    paramtersbyt = connectionparamters.getBytes("UTF-8");
+//                    paramtersbyt = connectionparamters.getBytes("UTF-8");
                 } catch (UnsupportedEncodingException e) {
                     e.printStackTrace();
                 }
@@ -423,28 +424,28 @@ public class Make_Notification1 extends AppCompatActivity
 
                 Thread thread = new Thread(runnable);
                 thread.start();
-            } else {
-                AlertDialog.Builder builder;
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                    builder = new AlertDialog.Builder(this, android.R.style.Theme_Material_Dialog_Alert);
-                } else {
-                    builder = new AlertDialog.Builder(this);
-                }
-                builder.setTitle("Error Message!")
-                        .setMessage("Make Sure You Are Connected To Wifi!")
-                        .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
-                            public void onClick(DialogInterface dialog, int which) {
-                                // continue with delete
-                            }
-                        })
-                        .setNegativeButton(android.R.string.no, new DialogInterface.OnClickListener() {
-                            public void onClick(DialogInterface dialog, int which) {
-                                // do nothing
-                            }
-                        })
-                        .setIcon(android.R.drawable.ic_dialog_alert)
-                        .show();
-            }
+//            } else {
+//                AlertDialog.Builder builder;
+//                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+//                    builder = new AlertDialog.Builder(this, android.R.style.Theme_Material_Dialog_Alert);
+//                } else {
+//                    builder = new AlertDialog.Builder(this);
+//                }
+//                builder.setTitle("Error Message!")
+//                        .setMessage("Make Sure You Are Connected To Wifi!")
+//                        .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
+//                            public void onClick(DialogInterface dialog, int which) {
+//                                // continue with delete
+//                            }
+//                        })
+//                        .setNegativeButton(android.R.string.no, new DialogInterface.OnClickListener() {
+//                            public void onClick(DialogInterface dialog, int which) {
+//                                // do nothing
+//                            }
+//                        })
+//                        .setIcon(android.R.drawable.ic_dialog_alert)
+//                        .show();
+//            }
         }
 
     }
@@ -523,6 +524,7 @@ public class Make_Notification1 extends AppCompatActivity
         } else if (id == R.id.nav_send) {
             Intent intent = new Intent(Make_Notification1.this, MainActivity.class);
             intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+            stopService(new Intent( Make_Notification1.this, NotificationService.class ));
             startActivity(intent);
         }
 

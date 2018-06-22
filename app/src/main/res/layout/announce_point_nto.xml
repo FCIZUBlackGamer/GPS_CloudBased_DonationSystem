@@ -43,13 +43,6 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Notification Sponser Name"
-            android:id="@+id/point_spon"
-            android:textAppearance="@style/Base.TextAppearance.AppCompat"
-            android:layout_marginTop="5dp"/>
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
             android:text="Notification Body"
             android:id="@+id/point_bod"
             android:textAppearance="@style/Base.TextAppearance.AppCompat"

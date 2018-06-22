@@ -63,8 +63,8 @@ public class Prof_hosp extends Fragment {
     }
 
     @Override
-    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
-        super.onActivityCreated( savedInstanceState );
+    public void onStart() {
+        super.onStart();
         LoadData();
     }
 
@@ -81,12 +81,12 @@ public class Prof_hosp extends Fragment {
             }
         }
         Toast.makeText(getActivity(),email,Toast.LENGTH_LONG).show();
-        email = "momen.shaeen2020@gmail.com";
+//        email = "momen.shaeen2020@gmail.com";
         final ProgressDialog progressDialog = new ProgressDialog(getActivity());
         progressDialog.setMessage("Loading Data ...");
         progressDialog.show();
 
-        StringRequest stringRequest = new StringRequest( Request.Method.POST, "http://momenshaheen.16mb.com/GetHospitalData.php",
+        StringRequest stringRequest = new StringRequest( Request.Method.POST, "https://gradproject2018.000webhostapp.com/Donation%20System/GetHospitalData.php",
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {

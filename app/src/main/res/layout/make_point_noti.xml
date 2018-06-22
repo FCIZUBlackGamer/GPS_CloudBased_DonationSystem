@@ -8,17 +8,6 @@
 
     <EditText
         android:layout_width="match_parent"
-        android:layout_height="35dp"
-        android:background="@color/colorgray"
-        android:hint="@string/Title"
-        android:paddingLeft="7.5dp"
-        android:id="@+id/pointspon"
-        android:textColor="@color/colorPrimary"
-        android:layout_marginBottom="10dp"
-        android:layout_marginTop="10dp" />
-
-    <EditText
-        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/colorgray"
         android:inputType="textMultiLine"

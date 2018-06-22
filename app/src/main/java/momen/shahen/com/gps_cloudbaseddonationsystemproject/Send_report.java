@@ -50,7 +50,7 @@ public class Send_report extends AppCompatActivity {
 
     String Image_Report_Hospital_Email = "Hospital_Email" ;
 
-    String ServerUploadPath ="http://momenshaheen.16mb.com/InsertNewImageReport.php" ;
+    String ServerUploadPath ="https://gradproject2018.000webhostapp.com/Donation%20System/InsertNewImageReport.php" ;
 
     ProgressDialog progressDialog ;
 

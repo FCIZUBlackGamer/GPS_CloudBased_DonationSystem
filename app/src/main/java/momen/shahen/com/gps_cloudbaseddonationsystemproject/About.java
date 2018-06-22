@@ -1,9 +1,9 @@
 package momen.shahen.com.gps_cloudbaseddonationsystemproject;
 
+import android.app.AliasActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
-import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -12,6 +12,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
@@ -22,31 +23,32 @@ public class About extends AppCompatActivity
     Intent intent;
     String get_email, get_user;
     Database database;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_about);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        database = new Database( this );
+        database = new Database(this);
 
         intent = getIntent();
-        get_email = intent.getStringExtra( "email" );
-        get_user = intent.getStringExtra( "user" );
+        get_email = intent.getStringExtra("email");
+        get_user = intent.getStringExtra("user");
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(About.this,Complain.class));
+                startActivity(new Intent(About.this, Complain.class));
             }
         });
 
-        button = (Button)findViewById(R.id.Contact_Us);
+        button = (Button) findViewById(R.id.Contact_Us);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(About.this,Complain.class));
+                startActivity(new Intent(About.this, Complain.class));
             }
         });
 
@@ -86,10 +88,10 @@ public class About extends AppCompatActivity
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
-            Intent v = new Intent( About.this,Settings_activity.class );
-            v.putExtra( "user",get_user );
-            v.putExtra( "email",get_email );
-            startActivity( v );
+            Intent v = new Intent(About.this, Settings_activity.class);
+            v.putExtra("user", get_user);
+            v.putExtra("email", get_email);
+            startActivity(v);
         }
 
         return super.onOptionsItemSelected(item);
@@ -102,40 +104,40 @@ public class About extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_home) {
-            Intent intent = new Intent(About.this,Main_Home.class);
-            intent.putExtra( "email",get_email );
-            intent.putExtra( "user",get_user );
-            startActivity( intent );
-        }else if (id == R.id.nav_camera) {
-            if (get_user.equals( "hospital" )){
-                Intent intent = new Intent( About.this, Hospital_post.class );
-                intent.putExtra( "email", get_email );
-                intent.putExtra( "user", get_user );
-                startActivity( intent );
-            }else {
-                Intent intent = new Intent( About.this, Home.class );
-                intent.putExtra( "email", get_email );
-                intent.putExtra( "user", get_user );
-                startActivity( intent );
+            Intent intent = new Intent(About.this, Main_Home.class);
+            intent.putExtra("email", get_email);
+            intent.putExtra("user", get_user);
+            startActivity(intent);
+        } else if (id == R.id.nav_camera) {
+            if (get_user.equals("hospital")) {
+                Intent intent = new Intent(About.this, Hospital_post.class);
+                intent.putExtra("email", get_email);
+                intent.putExtra("user", get_user);
+                startActivity(intent);
+            } else {
+                Intent intent = new Intent(About.this, Home.class);
+                intent.putExtra("email", get_email);
+                intent.putExtra("user", get_user);
+                startActivity(intent);
             }
         } else if (id == R.id.nav_gallery) {
-            Intent intent = new Intent(About.this,Profile.class);
-            intent.putExtra( "email",get_email );
-            intent.putExtra( "user",get_user );
-            startActivity( intent );
+            Intent intent = new Intent(About.this, Profile.class);
+            intent.putExtra("email", get_email);
+            intent.putExtra("user", get_user);
+            startActivity(intent);
         } else if (id == R.id.nav_slideshow) {
-            Intent intent = new Intent(About.this,Reports.class);
-            intent.putExtra( "email",get_email );
-            intent.putExtra( "user",get_user );
-            startActivity( intent );
-        }else if (id == R.id.make_notification) {
-            if (get_user.equals( "hospital" )) {
-                Intent intent = new Intent( About.this, Make_Notification1.class );
-                intent.putExtra( "email", get_email );
-                intent.putExtra( "user", get_user );
-                startActivity( intent );
-            }else {
-                Toast.makeText( About.this,"This Option Available For Hospital Only",Toast.LENGTH_SHORT ).show();
+            Intent intent = new Intent(About.this, Reports.class);
+            intent.putExtra("email", get_email);
+            intent.putExtra("user", get_user);
+            startActivity(intent);
+        } else if (id == R.id.make_notification) {
+            if (get_user.equals("hospital")) {
+                Intent intent = new Intent(About.this, Make_Notification1.class);
+                intent.putExtra("email", get_email);
+                intent.putExtra("user", get_user);
+                startActivity(intent);
+            } else {
+                Toast.makeText(About.this, "This Option Available For Hospital Only", Toast.LENGTH_SHORT).show();
             }
         } else if (id == R.id.nav_manage) {
 //            Intent intent = new Intent(About.this,About.class);
@@ -146,8 +148,9 @@ public class About extends AppCompatActivity
 
         } else if (id == R.id.nav_send) {
             Intent intent = new Intent(About.this, MainActivity.class);
-            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
-            database.UpdateData( "1",get_email,"0",get_user );
+            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+            database.UpdateData("1", get_email, "0", get_user, "0", "no", "0");
+            stopService(new Intent(About.this, NotificationService.class));
             startActivity(intent);
         }
 

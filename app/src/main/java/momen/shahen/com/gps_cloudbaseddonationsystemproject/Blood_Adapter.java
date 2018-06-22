@@ -73,7 +73,7 @@ public class Blood_Adapter extends RecyclerView.Adapter<Blood_Adapter.ViewHolder
                 if (x == 2)
                     x = 0;
                 if (x == 0) {
-                    StringRequest stringRequest = new StringRequest(Request.Method.POST, "http://momenshaheen.16mb.com/UpdateNotificationRate.php",
+                    StringRequest stringRequest = new StringRequest(Request.Method.POST, "https://gradproject2018.000webhostapp.com/Donation%20System/UpdateNotificationRate.php",
                             new Response.Listener<String>() {
                                 @Override
                                 public void onResponse(String response) {
@@ -162,7 +162,7 @@ public class Blood_Adapter extends RecyclerView.Adapter<Blood_Adapter.ViewHolder
         final ProgressDialog progressDialog = new ProgressDialog(context);
         progressDialog.setMessage("Loading Data ...");
         progressDialog.show();
-        StringRequest stringRequest = new StringRequest(Request.Method.POST, "http://momenshaheen.16mb.com/ShowMap.php",
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, "https://gradproject2018.000webhostapp.com/Donation%20System/ShowMap.php",
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {

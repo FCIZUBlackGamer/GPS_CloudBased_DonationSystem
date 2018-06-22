@@ -3,9 +3,6 @@ package momen.shahen.com.gps_cloudbaseddonationsystemproject;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -14,6 +11,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -35,6 +33,7 @@ public class Main_Home extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        startService(new Intent(Main_Home.this, NotificationService.class));
         intent = getIntent();
         get_email = intent.getStringExtra("email");
         get_user = intent.getStringExtra("user");
@@ -137,7 +136,7 @@ public class Main_Home extends AppCompatActivity
         if (id == R.id.nav_home) {
 
         } else if (id == R.id.nav_camera) {
-            if (get_user.equals("donar")) {
+            if (get_user.equals("donor")) {
                 Intent intent = new Intent(Main_Home.this, Home.class);
                 intent.putExtra("email", get_email);
                 intent.putExtra("user", get_user);
@@ -177,7 +176,8 @@ public class Main_Home extends AppCompatActivity
         } else if (id == R.id.nav_send) {
             Intent intent = new Intent(Main_Home.this, MainActivity.class);
             intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
-            database.UpdateData("1", get_email, "0", get_user);
+            database.UpdateData("1", get_email, "0", get_user, "0", "no", "0");
+            stopService(new Intent(Main_Home.this, NotificationService.class));
             startActivity(intent);
         }
 

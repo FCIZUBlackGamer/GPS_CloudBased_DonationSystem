@@ -5,13 +5,13 @@ package momen.shahen.com.gps_cloudbaseddonationsystemproject;
  */
 
 public class point_noti_item {
-    private String Name, content, date, sponser;
+    private String Name, content, date;
 
-    public point_noti_item(String date, String content, String sponser, String Name) {
+    public point_noti_item(String date, String content, String Name) {
         this.Name = Name;
         this.content = content;
         this.date = date;
-        this.sponser = sponser;
+//        this.sponser = sponser;
     }
 
     public String getName() {
@@ -26,7 +26,7 @@ public class point_noti_item {
         return date;
     }
 
-    public String getSpon() {
-        return sponser;
-    }
+//    public String getSpon() {
+//        return sponser;
+//    }
 }

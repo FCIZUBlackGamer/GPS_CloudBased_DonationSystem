@@ -17,7 +17,7 @@
             android:layout_height="match_parent"
             android:text="@string/Name"
             android:textStyle="bold"
-            android:textSize="20sp"/>
+            android:textSize="17sp"/>
         <EditText
             android:layout_width="0dp"
             android:id="@+id/don_name"
@@ -35,7 +35,7 @@
             android:layout_height="match_parent"
             android:text="@string/Email"
             android:textStyle="bold"
-            android:textSize="20sp"/>
+            android:textSize="17sp"/>
         <EditText
             android:layout_width="0dp"
             android:id="@+id/don_email"
@@ -54,7 +54,7 @@
             android:layout_height="match_parent"
             android:text="@string/Age"
             android:textStyle="bold"
-            android:textSize="20sp"/>
+            android:textSize="17sp"/>
         <EditText
             android:layout_width="0dp"
             android:id="@+id/don_age"
@@ -72,7 +72,7 @@
             android:layout_height="match_parent"
             android:text="@string/Password"
             android:textStyle="bold"
-            android:textSize="20sp"/>
+            android:textSize="17sp"/>
         <EditText
             android:layout_width="0dp"
             android:id="@+id/don_pass"
@@ -91,7 +91,7 @@
             android:layout_height="match_parent"
             android:text="@string/Confirm_Password"
             android:textStyle="bold"
-            android:textSize="20sp"/>
+            android:textSize="17sp"/>
         <EditText
             android:layout_width="0dp"
             android:id="@+id/don_con_pass"
@@ -110,7 +110,7 @@
             android:layout_height="match_parent"
             android:text="@string/Location"
             android:textStyle="bold"
-            android:textSize="20sp"/>
+            android:textSize="17sp"/>
         <Button
             android:layout_width="0dp"
             android:layout_height="match_parent"

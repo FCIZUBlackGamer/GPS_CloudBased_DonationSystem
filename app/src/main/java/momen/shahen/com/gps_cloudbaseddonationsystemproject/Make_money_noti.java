@@ -75,7 +75,7 @@ public class Make_money_noti extends Fragment {
                     while (cursor.moveToNext()) {
                         getemail = cursor.getString( 1 );
 
-                        url = "http://momenshaheen.16mb.com/InsertMoneyNotification.php";
+                        url = "https://gradproject2018.000webhostapp.com/Donation%20System/InsertMoneyNotification.php";
 
                         emailkey = "email";
                         contentkey = "content";

@@ -63,7 +63,7 @@ public class Make_Point_noti extends Fragment {
             public void onClick(View view){
 
                 cont = (EditText)context.findViewById(R.id.pointcon);
-                spon = (EditText)context.findViewById(R.id.pointspon);
+//                spon = (EditText)context.findViewById(R.id.pointspon);
 
                 cursor = database.ShowData();
                 if (cursor.getCount()==0)
@@ -74,9 +74,8 @@ public class Make_Point_noti extends Fragment {
                     while (cursor.moveToNext()) {
                         getemail = cursor.getString( 1 );
 
-                        url = "http://momenshaheen.16mb.com/InsertPointNotification.php";
+                        url = "https://gradproject2018.000webhostapp.com/Donation System/InsertOtherNotification.php";
                         emailkey = "email";
-                        sponserkey = "sponser";
                         contentkey = "content";
 
                         final ProgressDialog progressDialog = new ProgressDialog( context );
@@ -106,7 +105,6 @@ public class Make_Point_noti extends Fragment {
                             @Override
                             protected Map<String, String> getParams() throws AuthFailureError {
                                 HashMap hashMap = new HashMap();
-                                hashMap.put( sponserkey, spon.getText().toString() );
                                 hashMap.put( emailkey, getemail );
                                 hashMap.put( contentkey, cont.getText().toString() );
                                 return hashMap;

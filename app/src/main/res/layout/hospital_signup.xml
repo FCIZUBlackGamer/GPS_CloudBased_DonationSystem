@@ -17,7 +17,7 @@
             android:layout_height="match_parent"
             android:text="@string/Name"
             android:textStyle="bold"
-            android:textSize="20sp"/>
+            android:textSize="17sp"/>
         <EditText
             android:layout_width="0dp"
             android:id="@+id/hosp_name"
@@ -35,7 +35,7 @@
             android:layout_height="match_parent"
             android:text="@string/Email"
             android:textStyle="bold"
-            android:textSize="20sp"/>
+            android:textSize="17sp"/>
         <EditText
             android:layout_width="0dp"
             android:id="@+id/hosp_email"
@@ -54,7 +54,7 @@
             android:layout_height="match_parent"
             android:text="@string/City"
             android:textStyle="bold"
-            android:textSize="20sp"/>
+            android:textSize="17sp"/>
         <Spinner
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -75,7 +75,7 @@
             android:layout_height="match_parent"
             android:text="@string/Password"
             android:textStyle="bold"
-            android:textSize="20sp"/>
+            android:textSize="17sp"/>
         <EditText
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -94,7 +94,7 @@
             android:layout_height="match_parent"
             android:text="@string/Confirm_Password"
             android:textStyle="bold"
-            android:textSize="20sp"/>
+            android:textSize="17sp"/>
         <EditText
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -113,7 +113,7 @@
             android:layout_height="match_parent"
             android:text="@string/Location"
             android:textStyle="bold"
-            android:textSize="20sp"/>
+            android:textSize="17sp"/>
         <Button
             android:layout_width="0dp"
             android:layout_height="match_parent"

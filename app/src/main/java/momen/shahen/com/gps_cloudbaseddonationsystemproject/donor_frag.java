@@ -16,7 +16,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Spinner;
 import android.widget.Toast;
 
 import java.util.Iterator;
@@ -27,7 +26,7 @@ import java.util.Locale;
  * Created by fci on 14/01/18.
  */
 
-public class donner_frag extends Fragment {
+public class donor_frag extends Fragment {
     EditText name, email, pass, con_pass, age;
     Button save, getloc;
     Bundle bundle;
@@ -43,7 +42,7 @@ public class donner_frag extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View v = inflater.inflate(R.layout.donner_signup, container, false);
+        View v = inflater.inflate(R.layout.donor_signup, container, false);
         context = getActivity();
         name = (EditText) v.findViewById(R.id.don_name);
         email = (EditText) v.findViewById(R.id.don_email);
@@ -66,11 +65,9 @@ public class donner_frag extends Fragment {
         save = (Button) getActivity().findViewById(R.id.don_save);
         save.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
-
-
                 //create an Intent object
 
-                if (con_pass.getText().toString().equals(pass.getText().toString()) && String.valueOf(MyLat).equals("null") && String.valueOf(MyLong).equals("null")) {
+                if (con_pass.getText().toString().equals(pass.getText().toString()) && !String.valueOf(MyLat).equals("null") && !String.valueOf(MyLong).equals("null")) {
                     Intent intent = new Intent(context, Sign_up.class);
                     //add data to the Intent object
                     intent.putExtra("Don_name", name.getText().toString());
@@ -97,7 +94,7 @@ public class donner_frag extends Fragment {
 
 
         LocationManager locManager = (LocationManager) context.getSystemService(Context.LOCATION_SERVICE);
-        LocationListener locListener = new donner_frag.MyLocationListener();
+        LocationListener locListener = new donor_frag.MyLocationListener();
 
 
         try {

@@ -8,7 +8,7 @@
     </string-array>
     <string-array name="signup">
         <item>Hospital</item>
-        <item>Donner</item>
+        <item>Donor</item>
     </string-array>
     <string-array name="citys">
         <item>Alexandria</item>
@@ -44,9 +44,9 @@
         <item>Arabic</item>
     </string-array>
     <string-array name="noti_type">
-        <item>Blood</item>
-        <item>Money</item>
-        <item>Other</item>
+        <item>blood</item>
+        <item>money</item>
+        <item>other</item>
     </string-array>
     <string-array name="state">
         <item>Dangerous</item>
@@ -132,4 +132,5 @@
     <string name="Hospital">Hospital</string>
     <string name="Donor">Donor</string>
     <string name="important">important instructions to follow before donating either blood or money</string>
+    <string name="range">Notification Range</string>
 </resources>

@@ -12,5 +12,6 @@
     <color name="back_post">#80ffaa99</color>
     <color name="black">#000</color>
     <color name="back">#99ccff</color>
+    <color name="white">#fff</color>
 
 </resources>

@@ -1,5 +1,6 @@
 package momen.shahen.com.gps_cloudbaseddonationsystemproject;
 
+import android.app.AliasActivity;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -157,9 +158,10 @@ public class Reports extends AppCompatActivity
 
         final ProgressDialog progressDialog = new ProgressDialog(Reports.this);
         progressDialog.setMessage("Loading Data ...");
+        progressDialog.setCancelable(false);
         progressDialog.show();
 
-        StringRequest stringRequest = new StringRequest(Request.Method.POST, "http://momenshaheen.16mb.com/GetImageReport.php",
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, "https://gradproject2018.000webhostapp.com/Donation%20System/GetImageReport.php",
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
@@ -293,7 +295,8 @@ public class Reports extends AppCompatActivity
         } else if (id == R.id.nav_send) {
             Intent intent = new Intent(Reports.this, MainActivity.class);
             intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
-            database.UpdateData("1", get_email, "0", get_user);
+            database.UpdateData("1", get_email, "0", get_user,"0","no","0");
+            stopService(new Intent( Reports.this, NotificationService.class ));
             startActivity(intent);
         }
 

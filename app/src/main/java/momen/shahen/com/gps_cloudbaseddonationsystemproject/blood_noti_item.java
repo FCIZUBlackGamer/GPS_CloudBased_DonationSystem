@@ -8,7 +8,7 @@ public class blood_noti_item {
     private String doctorName, content, date, requestState, Name;
     String num_care, type;
 
-    public blood_noti_item(String date, String content, String doctorName, String requestState, String Name) {
+    public blood_noti_item(String date, String content, String Name, String doctorName, String requestState) {
         this.doctorName = doctorName;
         this.content = content;
         this.date = date;

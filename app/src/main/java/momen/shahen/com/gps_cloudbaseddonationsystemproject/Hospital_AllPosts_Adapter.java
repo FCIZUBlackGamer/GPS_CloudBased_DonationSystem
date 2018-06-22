@@ -64,13 +64,13 @@ public class Hospital_AllPosts_Adapter extends RecyclerView.Adapter<Hospital_All
 
         holder.num_care.setText( blood_noti.getNum_care() );
 
-        if (blood_noti.getType().equals("Blood")) {
+        if (blood_noti.getType().equals("blood")) {
             holder.docname.setText( blood_noti.getDocName() );
             holder.state.setText( blood_noti.getState() );
             holder.imageView.setImageResource( R.mipmap.ww );
-        }else if (blood_noti.getType().equals("Money")){
+        }else if (blood_noti.getType().equals("money")){
             holder.imageView.setImageResource( R.mipmap.dollar );
-        }else if (blood_noti.getType().equals("Other")){
+        }else if (blood_noti.getType().equals("other")){
             holder.imageView.setImageResource( R.mipmap.various );
         }
         holder.update.setOnClickListener( new View.OnClickListener() {
@@ -85,7 +85,7 @@ public class Hospital_AllPosts_Adapter extends RecyclerView.Adapter<Hospital_All
                 post.setTextColor( R.color.colorPrimaryDark );
                 post.setHintTextColor( R.color.colorPrimaryDark );
                 linearLayout.setOrientation( LinearLayout.VERTICAL );
-                if (blood_noti.getType().equals("Blood")){
+                if (blood_noti.getType().equals("blood")){
 
                     final List<String> list = new ArrayList<String>();
                     list.add("Dangerous");
@@ -99,13 +99,14 @@ public class Hospital_AllPosts_Adapter extends RecyclerView.Adapter<Hospital_All
                     linearLayout.addView( spin );
 
                     doc_name.setHint( "Doctor Name" );
-                    doc_name.setTextColor( R.color.colorPrimaryDark );
-                    doc_name.setHintTextColor( R.color.colorPrimaryDark );
+                    doc_name.setTextColor( R.color.black );
+                    doc_name.setHintTextColor( R.color.black );
+                    linearLayout.setBackgroundColor(R.color.white);
                     linearLayout.addView( doc_name );
                 }
 
                 linearLayout.addView( post );
-                linearLayout.setBackgroundColor( R.color.back );
+                //linearLayout.setBackgroundColor( R.color.back );
 
 
 
@@ -124,7 +125,7 @@ public class Hospital_AllPosts_Adapter extends RecyclerView.Adapter<Hospital_All
                                 final ProgressDialog progressDialog = new ProgressDialog( context );
                                 progressDialog.setMessage( "Updating Post ... " );
                                 progressDialog.show();
-                                StringRequest stringRequest = new StringRequest( Request.Method.POST, "http://momenshaheen.16mb.com/UpdatePosts.php",
+                                StringRequest stringRequest = new StringRequest( Request.Method.POST, "https://gradproject2018.000webhostapp.com/Donation%20System/UpdatePosts.php",
                                         new Response.Listener<String>() {
                                             @Override
                                             public void onResponse(final String response) {
@@ -186,7 +187,7 @@ public class Hospital_AllPosts_Adapter extends RecyclerView.Adapter<Hospital_All
                                 final ProgressDialog progressDialog = new ProgressDialog( context );
                                 progressDialog.setMessage( "Deleting Post ... " );
                                 progressDialog.show();
-                                StringRequest stringRequest = new StringRequest( Request.Method.POST, "http://momenshaheen.16mb.com/DeletePost.php",
+                                StringRequest stringRequest = new StringRequest( Request.Method.POST, "https://gradproject2018.000webhostapp.com/Donation%20System/Deletepost.php",
                                         new Response.Listener<String>() {
                                             @Override
                                             public void onResponse(final String response) {

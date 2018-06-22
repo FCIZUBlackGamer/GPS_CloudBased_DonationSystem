@@ -2,27 +2,25 @@ package momen.shahen.com.gps_cloudbaseddonationsystemproject;
 
 import android.app.ProgressDialog;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
-import android.os.Build;
-import android.support.design.widget.Snackbar;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v7.app.AlertDialog;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
+import com.android.volley.NetworkError;
 import com.android.volley.Request;
 import com.android.volley.Response;
+import com.android.volley.ServerError;
+import com.android.volley.TimeoutError;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
@@ -77,13 +75,14 @@ public class Sign_up extends AppCompatActivity {
                     newFragment = new Hosp_frag();
                     transaction.replace(R.id.frag_don_hosp, newFragment).commit();
 
-                } else if (text.equals("Donner")) {
+                } else if (text.equals("Donor")) {
                     fragmentManager = getSupportFragmentManager();
                     transaction = fragmentManager.beginTransaction();
-                    newFragment = new donner_frag();
+                    newFragment = new donor_frag();
                     transaction.replace(R.id.frag_don_hosp, newFragment).commit();
 
                 } else {
+
                 }
             }
 
@@ -99,8 +98,8 @@ public class Sign_up extends AppCompatActivity {
         super.onStart();
         bundle = getIntent().getExtras();
         if (getIntent().getStringExtra("Hosp_name") != null) {
-            /*
-            url = "http://momenshaheen.16mb.com/InsertNewHospital.php";
+
+            url = "https://gradproject2018.000webhostapp.com/Donation%20System/InsertNewHospital.php";
             namekey = "name=";
             citynamekey = "&city_name=";
             emailkey = "&email=";
@@ -108,7 +107,7 @@ public class Sign_up extends AppCompatActivity {
             lat = "&lat=";
             lang = "&lan=";
             try {
-                connectionparamters = namekey + URLEncoder.encode("Hosp_name", "UTF-8") + citynamekey
+                connectionparamters = namekey + URLEncoder.encode(getIntent().getStringExtra("Hosp_name"), "UTF-8") + citynamekey
                         + URLEncoder.encode(getIntent().getStringExtra("Hosp_city"), "UTF-8") +
                         emailkey + URLEncoder.encode(getIntent().getStringExtra("Hosp_email"),
                         "UTF-8") + passkey + URLEncoder.encode(getIntent().getStringExtra("Hosp_pass"), "UTF-8")
@@ -136,6 +135,12 @@ public class Sign_up extends AppCompatActivity {
                             @Override
                             public void run() {
                                 Toast.makeText(Sign_up.this, result, Toast.LENGTH_LONG).show();
+                                if (result.equals(" User Add Successfuly ")) {
+
+                                    startActivity(new Intent(Sign_up.this, MainActivity.class));
+                                } else {
+
+                                }
                             }
                         });
                     } catch (IOException e) {
@@ -146,7 +151,7 @@ public class Sign_up extends AppCompatActivity {
 
             Thread thread = new Thread(runnable);
             thread.start();
-            */
+
         } else if (getIntent().getStringExtra("Don_name") != null) {
             connManager = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
             assert connManager != null;
@@ -154,7 +159,7 @@ public class Sign_up extends AppCompatActivity {
 
             if (mWifi.isConnected()) {
 
-                url = "http://momenshaheen.16mb.com/InsertNewUser.php";
+                url = "https://gradproject2018.000webhostapp.com/Donation%20System/InsertNewUser.php";
                 namekey = "name";
                 final String email = getIntent().getStringExtra("Don_email");
                 final String pass = getIntent().getStringExtra("Don_pass");
@@ -172,18 +177,20 @@ public class Sign_up extends AppCompatActivity {
                     final ProgressDialog progressDialog = new ProgressDialog(Sign_up.this);
                     progressDialog.setMessage("Connecting ...");
                     progressDialog.show();
-                    StringRequest stringRequest = new StringRequest(Request.Method.POST, url,
+                    progressDialog.setCancelable(false);
+                    StringRequest stringRequest1 = new StringRequest(Request.Method.POST, "https://gradproject2018.000webhostapp.com/Donation%20System/InsertNewUser.php",
                             new Response.Listener<String>() {
                                 @Override
                                 public void onResponse(final String response) {
                                     runOnUiThread(new Runnable() {
                                         @Override
                                         public void run() {
+                                            progressDialog.dismiss();
                                             Toast.makeText(Sign_up.this, response, Toast.LENGTH_LONG).show();
-                                            if (response.equals("Welcome Home!")) {
+                                            if (response.equals(" User Add Successfuly ")) {
+//                                                startActivity(new Intent(Sign_up.this, MainActivity.class));
+                                            } else {
 
-                                                progressDialog.dismiss();
-                                                startActivity(new Intent(Sign_up.this, MainActivity.class));
                                             }
                                         }
                                     });
@@ -191,8 +198,14 @@ public class Sign_up extends AppCompatActivity {
                             }, new Response.ErrorListener() {
                         @Override
                         public void onErrorResponse(VolleyError error) {
+                            progressDialog.dismiss();
+                            if (error instanceof ServerError)
+                                Toast.makeText(Sign_up.this, "Server Error!", Toast.LENGTH_SHORT).show();
+                            else if (error instanceof NetworkError)
+                                Toast.makeText(Sign_up.this, "Bad Network!", Toast.LENGTH_SHORT).show();
+                            else if (error instanceof TimeoutError)
+                                Toast.makeText(Sign_up.this, "Connection Timeout!", Toast.LENGTH_SHORT).show();
 
-                            Toast.makeText(Sign_up.this, "Can't Connect to Server!", Toast.LENGTH_SHORT).show();
                         }
                     }) {
                         @Override
@@ -207,33 +220,12 @@ public class Sign_up extends AppCompatActivity {
                             return hashMap;
                         }
                     };
-                    Volley.newRequestQueue(Sign_up.this).add(stringRequest);
-                }else {
+                    Volley.newRequestQueue(Sign_up.this).add(stringRequest1);
+                } else {
                     Toast.makeText(Sign_up.this, "Make Sure All Fields Is Completed!", Toast.LENGTH_LONG).show();
 
                 }
             }
-        } else {
-            AlertDialog.Builder builder;
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                builder = new AlertDialog.Builder(this, android.R.style.Theme_Material_Dialog_Alert);
-            } else {
-                builder = new AlertDialog.Builder(this);
-            }
-            builder.setTitle("Error Message!")
-                    .setMessage("Make Sure You Are Connected To Wifi!")
-                    .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
-                        public void onClick(DialogInterface dialog, int which) {
-                            // continue with delete
-                        }
-                    })
-                    .setNegativeButton(android.R.string.no, new DialogInterface.OnClickListener() {
-                        public void onClick(DialogInterface dialog, int which) {
-                            // do nothing
-                        }
-                    })
-                    .setIcon(android.R.drawable.ic_dialog_alert)
-                    .show();
         }
     }
 }

@@ -91,6 +91,7 @@
             android:name=".Hospital_post"
             android:label="@string/title_activity_hospital_post"
             android:theme="@style/AppTheme"></activity>
+        <service android:name=".NotificationService"/>
     </application>
 
 </manifest>

@@ -73,23 +73,23 @@ public class Hosp_frag extends Fragment {
                 //create an Intent object
 
                 if (con_pass.getText().toString().equals(pass.getText().toString())) {
-                    Intent i = new Intent(Intent.ACTION_SEND);
-                    i.setType("message/rfc822");
-                    String body = "Hosp_name" + name.getText().toString()
-                            + "\nHosp_email" + email.getText().toString()
-                            + "\nHosp_pass" + pass.getText().toString()
-                            + "\nHosp_city" + city.getSelectedItem().toString()
-                            + "\nHosp_lat" + MyLat
-                            + "\nHosp_lan" + MyLong;
-                    i.putExtra(Intent.EXTRA_EMAIL, new String[]{"momen.shahen2020@gmail.com"});
-                    i.putExtra(Intent.EXTRA_SUBJECT, "NEW HOSPITAL WANT TO REGISTER");
-                    i.putExtra(Intent.EXTRA_TEXT, body);
-                    try {
-                        startActivity(Intent.createChooser(i, "Send mail..."));
-                    } catch (android.content.ActivityNotFoundException ex) {
-                        Toast.makeText(getActivity(), "There are no email clients installed.", Toast.LENGTH_SHORT).show();
-                    }
-                    /*
+//                    Intent i = new Intent(Intent.ACTION_SEND);
+//                    i.setType("message/rfc822");
+//                    String body = "Hosp_name" + name.getText().toString()
+//                            + "\nHosp_email" + email.getText().toString()
+//                            + "\nHosp_pass" + pass.getText().toString()
+//                            + "\nHosp_city" + city.getSelectedItem().toString()
+//                            + "\nHosp_lat" + MyLat
+//                            + "\nHosp_lan" + MyLong;
+//                    i.putExtra(Intent.EXTRA_EMAIL, new String[]{"momen.shahen2020@gmail.com"});
+//                    i.putExtra(Intent.EXTRA_SUBJECT, "NEW HOSPITAL WANT TO REGISTER");
+//                    i.putExtra(Intent.EXTRA_TEXT, body);
+//                    try {
+//                        startActivity(Intent.createChooser(i, "Send mail..."));
+//                    } catch (android.content.ActivityNotFoundException ex) {
+//                        Toast.makeText(getActivity(), "There are no email clients installed.", Toast.LENGTH_SHORT).show();
+//                    }
+
                     Intent intent = new Intent(context, Sign_up.class);
                     //add data to the Intent object
                     intent.putExtra("Hosp_name", name.getText().toString());
@@ -101,7 +101,7 @@ public class Hosp_frag extends Fragment {
                     intent.putExtra("Hosp_lan", MyLong+"");
                     //start the second activity
                     startActivity(intent);
-                    */
+
 
                 } else {
                     Toast.makeText(getActivity(), "Password Doesn't Match", Toast.LENGTH_SHORT).show();

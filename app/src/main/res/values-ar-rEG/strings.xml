@@ -133,6 +133,7 @@
     <string name="Hospital">مستشفي</string>
     <string name="Donor">متبرع</string>
     <string name="important">تعليمات مهمه قبل التبرع بالنقود او الاموال</string>
+    <string name="range">Notification Range</string>
 
 
 </resources>

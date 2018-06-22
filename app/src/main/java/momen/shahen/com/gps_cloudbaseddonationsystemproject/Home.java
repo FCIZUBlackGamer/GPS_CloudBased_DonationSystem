@@ -1,5 +1,6 @@
 package momen.shahen.com.gps_cloudbaseddonationsystemproject;
 
+import android.app.AliasActivity;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
@@ -198,6 +199,7 @@ public class Home extends AppCompatActivity
         } else if (id == R.id.nav_send) {
             Intent intent = new Intent(Home.this, MainActivity.class);
             intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
+            stopService(new Intent( Home.this, NotificationService.class ));
             startActivity(intent);
         }
 
@@ -224,15 +226,15 @@ class pager extends FragmentPagerAdapter
         Fragment fragment = null;
         if(position==0)
         {
-            fragment = new fragA();
+            fragment = new fragBlood();
         }
         else if(position==1)
         {
-            fragment = new fragB();
+            fragment = new fragMoney();
         }
         else if(position==2)
         {
-            fragment = new fragC();
+            fragment = new fragOther();
         }
         return fragment;
     }

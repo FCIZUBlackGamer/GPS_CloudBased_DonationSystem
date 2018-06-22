@@ -90,35 +90,35 @@ public class Hospital_post extends AppCompatActivity
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 get_value = spinner.getSelectedItem().toString();
-                if (isNetworkConnected()) {
+//                if (isNetworkConnected()) {
                     if (get_email.isEmpty()) {
                         Snackbar.make(view, "No Session Started Yet!", Snackbar.LENGTH_LONG)
                                 .setAction("Action", null).show();
                     } else {
                         LoadRecyclerViewData(get_email, get_value);
                     }
-                } else {
-                    AlertDialog.Builder builder;
-                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                        builder = new AlertDialog.Builder(Hospital_post.this, android.R.style.Theme_Material_Dialog_Alert);
-                    } else {
-                        builder = new AlertDialog.Builder(Hospital_post.this);
-                    }
-                    builder.setTitle("Error Message!")
-                            .setMessage("Make Sure You Are Connected To Wifi!")
-                            .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
-                                public void onClick(DialogInterface dialog, int which) {
-                                    // continue with delete
-                                }
-                            })
-                            .setNegativeButton(android.R.string.no, new DialogInterface.OnClickListener() {
-                                public void onClick(DialogInterface dialog, int which) {
-                                    // do nothing
-                                }
-                            })
-                            .setIcon(android.R.drawable.ic_dialog_alert)
-                            .show();
-                }
+//                } else {
+//                    AlertDialog.Builder builder;
+//                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+//                        builder = new AlertDialog.Builder(Hospital_post.this, android.R.style.Theme_Material_Dialog_Alert);
+//                    } else {
+//                        builder = new AlertDialog.Builder(Hospital_post.this);
+//                    }
+//                    builder.setTitle("Error Message!")
+//                            .setMessage("Make Sure You Are Connected To Wifi!")
+//                            .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
+//                                public void onClick(DialogInterface dialog, int which) {
+//                                    // continue with delete
+//                                }
+//                            })
+//                            .setNegativeButton(android.R.string.no, new DialogInterface.OnClickListener() {
+//                                public void onClick(DialogInterface dialog, int which) {
+//                                    // do nothing
+//                                }
+//                            })
+//                            .setIcon(android.R.drawable.ic_dialog_alert)
+//                            .show();
+//                }
             }
 
             @Override
@@ -162,16 +162,16 @@ public class Hospital_post extends AppCompatActivity
         final ProgressDialog progressDialog = new ProgressDialog(Hospital_post.this);
         progressDialog.setMessage("Loading ...");
         progressDialog.show();
-        StringRequest stringRequest = new StringRequest(Request.Method.POST, "http://momenshaheen.16mb.com/GetHospitalPosts.php",
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, "https://gradproject2018.000webhostapp.com/Donation%20System/GetHospitalPosts.php",
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
-                        try {
-                            String s = URLEncoder.encode(response, "ISO-8859-1");
-                            response = URLDecoder.decode(s, "UTF-8");
-                        } catch (UnsupportedEncodingException e) {
-                            e.printStackTrace();
-                        }
+//                        try {
+//                            String s = URLEncoder.encode(response, "ISO-8859-1");
+//                            response = URLDecoder.decode(s, "UTF-8");
+//                        } catch (UnsupportedEncodingException e) {
+//                            e.printStackTrace();
+//                        }
                         progressDialog.dismiss();
                         try {
                             JSONObject jsonObject = new JSONObject(response);
@@ -298,7 +298,7 @@ public class Hospital_post extends AppCompatActivity
         } else if (id == R.id.nav_send) {
             Intent intent = new Intent(Hospital_post.this, MainActivity.class);
             intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
-            database.UpdateData("1", get_email, "0", get_user);
+            database.UpdateData("1", get_email, "0", get_user,"0","no","0");
             startActivity(intent);
         }
 

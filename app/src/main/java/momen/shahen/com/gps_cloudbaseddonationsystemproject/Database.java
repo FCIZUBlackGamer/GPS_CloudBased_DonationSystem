@@ -27,12 +27,18 @@ public class Database extends SQLiteOpenHelper {
 
     private static final String TYPE = "type";
 
-    private static final int DATABASE_VERSION = 2;
+    private static final String DISTANCE = "distanse";
+
+    private static final String ENABLE_NOTIFICATION = "enable_notification";
+
+    private static final String LAST_NUM_ROWS = "last_id";
+
+    private static final int DATABASE_VERSION = 4;
     Context cont;
 
     // Database creation sql statement
     private static final String DATABASE_CREATE = "create table " +TABLE_NAME +
-            "( "+UID+" integer primary key , "+EMAIL+" varchar(255) not null, "+LOGIN+" varchar(2) not null, "+TYPE+" varchar(255) not null);";
+            "( "+UID+" integer primary key , "+EMAIL+" varchar(255) not null, "+LOGIN+" varchar(2) not null, "+TYPE+" varchar(255) not null, "+DISTANCE+" varchar(255) not null, "+ENABLE_NOTIFICATION+" varchar(255) not null, "+LAST_NUM_ROWS+" varchar(255) not null);";
 
     // Database Deletion
     private static final String DATABASE_DROP = "drop table if exists "+TABLE_NAME+";";
@@ -46,7 +52,7 @@ public class Database extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         try {
             db.execSQL(DATABASE_CREATE);
-            db.execSQL("insert into "+TABLE_NAME+" ( "+UID+", "+EMAIL+", "+LOGIN+", "+TYPE+" ) values ( '1', 'e', '0', 't');");
+            db.execSQL("insert into "+TABLE_NAME+" ( "+UID+", "+EMAIL+", "+LOGIN+", "+TYPE+", "+DISTANCE+", "+ENABLE_NOTIFICATION+", "+LAST_NUM_ROWS+" ) values ( '1', 'e', '0', 't', 'e', '0', 't');");
             Toast.makeText(cont,"database created", Toast.LENGTH_SHORT).show();
         }catch (SQLException e)
         {
@@ -74,6 +80,9 @@ public class Database extends SQLiteOpenHelper {
         contentValues.put(EMAIL,email);
         contentValues.put(LOGIN,state);
         contentValues.put(TYPE,type);
+        contentValues.put(DISTANCE,"0");
+        contentValues.put(ENABLE_NOTIFICATION,"yes");
+        contentValues.put(LAST_NUM_ROWS,"0");
         long result = sqLiteDatabase.insert(TABLE_NAME,null,contentValues);
 
         return result==-1?false:true;
@@ -86,7 +95,7 @@ public class Database extends SQLiteOpenHelper {
         return cursor;
     }
 
-    public boolean UpdateData (String id, String email, String state, String type )
+    public boolean UpdateData (String id, String email, String state, String type, String dis, String enable, String last )
     {
         SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
@@ -94,16 +103,42 @@ public class Database extends SQLiteOpenHelper {
         contentValues.put(EMAIL,email);
         contentValues.put(LOGIN,state);
         contentValues.put(TYPE,type);
+        contentValues.put(DISTANCE,dis);
+        contentValues.put(ENABLE_NOTIFICATION,enable);
+        contentValues.put(LAST_NUM_ROWS,last);
         sqLiteDatabase.update(TABLE_NAME,contentValues,"id = "+Integer.parseInt( id ),null);
 
         return true;
     }
 
-    public boolean UpdateData (String id, String lang, String lat )
+    public boolean UpdateNotification (String id, String word )
     {
         SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put(UID,id);
+        contentValues.put(ENABLE_NOTIFICATION,word);
+        sqLiteDatabase.update(TABLE_NAME,contentValues,"id = ?",new String[]{id});
+
+        return true;
+    }
+
+    public boolean UpdateLastNumRows (String id, String word )
+    {
+        SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(UID,id);
+        contentValues.put(LAST_NUM_ROWS,word);
+        sqLiteDatabase.update(TABLE_NAME,contentValues,"id = ?",new String[]{id});
+
+        return true;
+    }
+
+    public boolean UpdateDistance (String id, String word )
+    {
+        SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(UID,id);
+        contentValues.put(DISTANCE,word);
         sqLiteDatabase.update(TABLE_NAME,contentValues,"id = ?",new String[]{id});
 
         return true;

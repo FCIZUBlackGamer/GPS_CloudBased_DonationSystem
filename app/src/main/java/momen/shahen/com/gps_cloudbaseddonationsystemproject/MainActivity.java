@@ -9,7 +9,6 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
-import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -21,18 +20,8 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.UnsupportedEncodingException;
-import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
-import java.net.URL;
-import java.net.URLEncoder;
 import java.util.HashMap;
 import java.util.Map;
-
-import static com.google.android.gms.internal.zzahn.runOnUiThread;
 
 public class MainActivity extends Activity {
 
@@ -88,7 +77,7 @@ public class MainActivity extends Activity {
             @Override
             public void onClick(View v) {
 
-                final String type = "donar";
+                final String type = "donor";
                 final String au = email.getText().toString();
                 final String pos = pass.getText().toString();
                 final String emailkey = "email";
@@ -97,7 +86,7 @@ public class MainActivity extends Activity {
                 final ProgressDialog progressDialog = new ProgressDialog(MainActivity.this);
                 progressDialog.setMessage("Connecting ...");
                 progressDialog.show();
-                StringRequest stringRequest = new StringRequest(Request.Method.POST, "http://momenshaheen.16mb.com/Login.php",
+                StringRequest stringRequest = new StringRequest(Request.Method.POST, "https://gradproject2018.000webhostapp.com/Donation%20System/Login.php",
                         new Response.Listener<String>() {
                             @Override
                             public void onResponse(final String response) {
@@ -109,12 +98,10 @@ public class MainActivity extends Activity {
                                         intent.putExtra("user", type);
                                         Toast.makeText(MainActivity.this, response, Toast.LENGTH_LONG).show();
                                         if (response.equals("Welcome Home!")) {
-                                            if (remember_me.isChecked()) {
-                                                Log.e("CHECKED", "Remember me");
-                                                database.UpdateData("1", au, "1", type);
-                                            }
-                                            startActivity(intent);
+                                            Log.e("CHECKED", "Remember me");
+                                            database.UpdateData("1", au, "1", type, "0", "yes", "0");
                                             progressDialog.dismiss();
+                                            startActivity(intent);
                                         }
                                     }
                                 });
@@ -151,7 +138,7 @@ public class MainActivity extends Activity {
                 final ProgressDialog progressDialog = new ProgressDialog(MainActivity.this);
                 progressDialog.setMessage("Connecting ...");
                 progressDialog.show();
-                StringRequest stringRequest = new StringRequest(Request.Method.POST, "http://momenshaheen.16mb.com/Login.php",
+                StringRequest stringRequest = new StringRequest(Request.Method.POST, "https://gradproject2018.000webhostapp.com/Donation%20System/Login.php",
                         new Response.Listener<String>() {
                             @Override
                             public void onResponse(final String response) {
@@ -162,10 +149,8 @@ public class MainActivity extends Activity {
                                         intent.putExtra("user", type);
                                         Toast.makeText(MainActivity.this, response, Toast.LENGTH_LONG).show();
                                         if (response.equals("Welcome Home!")) {
-                                            if (remember_me.isChecked()) {
                                                 Log.e("CHECKED", "Remember me");
-                                                database.UpdateData("1", au, "1", type);
-                                            }
+                                                database.UpdateData("1", au, "1", type, "0", "yes", "0");
                                             startActivity(intent);
                                             progressDialog.dismiss();
                                         }

@@ -2,6 +2,7 @@ package momen.shahen.com.gps_cloudbaseddonationsystemproject;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.app.AliasActivity;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -21,9 +22,12 @@ import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.SeekBar;
 import android.widget.Toast;
+import android.widget.ToggleButton;
 
 import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
@@ -42,7 +46,7 @@ import java.util.Map;
  * Created by fci on 14/01/18.
  */
 
-public class Settings_activity extends Activity implements View.OnClickListener {
+public class Settings_activity extends Activity implements View.OnClickListener, CompoundButton.OnCheckedChangeListener {
     private static final int REQUEST_LOCATION = 1;
     Button button;
     LocationManager locationManager;
@@ -63,6 +67,9 @@ public class Settings_activity extends Activity implements View.OnClickListener 
     Intent intent;
     String get_email, get_user;
     Button change_pass;
+    ToggleButton toggleButton;
+    SeekBar seekBar;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -71,10 +78,32 @@ public class Settings_activity extends Activity implements View.OnClickListener 
         ActivityCompat.requestPermissions( this, new String[]{android.Manifest.permission.ACCESS_FINE_LOCATION}, REQUEST_LOCATION );
         database = new Database( this );
         intent = getIntent();
+        seekBar = findViewById(R.id.seek);
+        getLocation();
+        toggleButton = findViewById(R.id.change_state);
+        if (toggleButton != null) {
+            toggleButton.setOnCheckedChangeListener(this);
+        }
         change_pass = (Button) findViewById( R.id.change_pass );
         get_email = intent.getStringExtra( "email" );
         get_user = intent.getStringExtra( "user" );
 
+        seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                database.UpdateDistance("1",progress+"");
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+
+            }
+        });
         button = (Button) findViewById( R.id.button_location );
         change_pass.setOnClickListener( new View.OnClickListener() {
             @SuppressLint("ResourceAsColor")
@@ -251,16 +280,6 @@ public class Settings_activity extends Activity implements View.OnClickListener 
         }
     }
 
-    @Override
-    public void onBackPressed() {
-        super.onBackPressed();
-        Intent intent = new Intent( Settings_activity.this, Main_Home.class );
-        intent.setFlags( Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK );
-        intent.putExtra( "user", get_user );
-        intent.putExtra( "email", get_email );
-        startActivity( intent );
-    }
-
     private void getLocation() {
         if (ActivityCompat.checkSelfPermission( Settings_activity.this, android.Manifest.permission.ACCESS_FINE_LOCATION )
                 != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission
@@ -269,6 +288,7 @@ public class Settings_activity extends Activity implements View.OnClickListener 
             ActivityCompat.requestPermissions( Settings_activity.this, new String[]{android.Manifest.permission.ACCESS_FINE_LOCATION}, REQUEST_LOCATION );
 
         } else {
+            locationManager = (LocationManager) getSystemService( Context.LOCATION_SERVICE );
             Location location = locationManager.getLastKnownLocation( LocationManager.NETWORK_PROVIDER );
 
             Location location1 = locationManager.getLastKnownLocation( LocationManager.GPS_PROVIDER );
@@ -399,16 +419,31 @@ public class Settings_activity extends Activity implements View.OnClickListener 
             e.printStackTrace();
         }
 
-        Toast.makeText( this, "" + MyLat + "\n" +
-                MyLong + "\n StateName " + StateName +
-                "\n CityName " + CityName + "\n CountryName "
-                + CountryName, Toast.LENGTH_LONG ).show();
+//        Toast.makeText( this, "" + MyLat + "\n" +
+//                MyLong + "\n StateName " + StateName +
+//                "\n CityName " + CityName + "\n CountryName "
+//                + CountryName, Toast.LENGTH_LONG ).show();
         Log.e( "Lat: ", MyLat + "" );
         Log.e( "Long: ", MyLong + "" );
     }
 
+    @Override
+    public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+        if(isChecked) {
+            //do stuff when Switch is ON
+            database.UpdateNotification("1","yes");
+            Toast.makeText(Settings_activity.this,"Notification Is On Now",Toast.LENGTH_SHORT).show();
+            startService(new Intent(Settings_activity.this,NotificationService.class));
+        } else {
+            //do stuff when Switch if OFF
+            database.UpdateNotification("1","no");
+            Toast.makeText(Settings_activity.this,"Notification Is Off Now",Toast.LENGTH_SHORT).show();
+            stopService(new Intent(Settings_activity.this,NotificationService.class));
+        }
+    }
+
     // Location listener class. to get location.
-    public class MyLocationListener implements LocationListener {
+    public static class MyLocationListener implements LocationListener {
         public void onLocationChanged(Location location) {
             if (location != null) {
             }

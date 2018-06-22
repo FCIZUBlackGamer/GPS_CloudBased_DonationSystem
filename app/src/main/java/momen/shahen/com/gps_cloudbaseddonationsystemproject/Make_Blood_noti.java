@@ -97,9 +97,8 @@ public class Make_Blood_noti extends Fragment {
                     while (cursor.moveToNext()) {
                         getemail = cursor.getString( 1 );
 
-                        getMyCurrentLocation();
-                        url = "http://momenshaheen.16mb.com/InsertBloodNotification.php";
-                        citykey = "city_name";
+//                        getMyCurrentLocation();
+                        url = "https://gradproject2018.000webhostapp.com/Donation%20System/InsertBloodNotification.php";
                         emailkey = "email";
                         contentkey = "content";
                         doctornamekey = "doctorname";
@@ -132,7 +131,6 @@ public class Make_Blood_noti extends Fragment {
                             @Override
                             protected Map<String, String> getParams() throws AuthFailureError {
                                 HashMap hashMap = new HashMap();
-                                hashMap.put( citykey, StateName );
                                 hashMap.put( emailkey, getemail );
                                 hashMap.put( contentkey, cont.getText().toString() );
                                 hashMap.put( doctornamekey, docname.getText().toString() );

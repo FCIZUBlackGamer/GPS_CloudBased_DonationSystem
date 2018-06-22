@@ -28,6 +28,7 @@ public class Profile extends AppCompatActivity
     Fragment newFragment;
 
     String get_email, get_user;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,34 +37,34 @@ public class Profile extends AppCompatActivity
 //        cursor = database.ShowData();
         intent = getIntent();
 
-        get_email = intent.getStringExtra( "email" );
-        get_user = intent.getStringExtra( "user" );
+        get_email = intent.getStringExtra("email");
+        get_user = intent.getStringExtra("user");
 //Toast.makeText( Profile.this,"email: "+get_email+"\n"+"user: "+get_user,Toast.LENGTH_SHORT ).show();
 
         database = new Database(this);
         cursor = database.ShowData();
 
-        while (cursor.moveToNext()){
+        while (cursor.moveToNext()) {
             get_email = cursor.getString(1);
             get_user = cursor.getString(3);
 
         }
 
-            if (get_user.equals("donar")){
-                    fragmentManager = getSupportFragmentManager();
-                    transaction = fragmentManager.beginTransaction();
-                    newFragment = new Prof_don();
-                    transaction.replace(R.id.prof_frag,newFragment).commit();
+        if (get_user.equals("donor")) {
+            fragmentManager = getSupportFragmentManager();
+            transaction = fragmentManager.beginTransaction();
+            newFragment = new Prof_don();
+            transaction.replace(R.id.prof_frag, newFragment).commit();
 
-            }else if (get_user.equals("hospital")){
-                    fragmentManager = getSupportFragmentManager();
-                    transaction = fragmentManager.beginTransaction();
-                    newFragment = new Prof_hosp();
-                    transaction.replace(R.id.prof_frag,newFragment).commit();
-            }else {
+        } else if (get_user.equals("hospital")) {
+            fragmentManager = getSupportFragmentManager();
+            transaction = fragmentManager.beginTransaction();
+            newFragment = new Prof_hosp();
+            transaction.replace(R.id.prof_frag, newFragment).commit();
 
-            }
+        } else {
 
+        }
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -72,7 +73,7 @@ public class Profile extends AppCompatActivity
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(Profile.this,Complain.class));
+                startActivity(new Intent(Profile.this, Complain.class));
             }
         });
 
@@ -112,10 +113,10 @@ public class Profile extends AppCompatActivity
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
-            Intent v = new Intent( Profile.this,Settings_activity.class );
-            v.putExtra( "user",get_user );
-            v.putExtra( "email",get_email );
-            startActivity( v );
+            Intent v = new Intent(Profile.this, Settings_activity.class);
+            v.putExtra("user", get_user);
+            v.putExtra("email", get_email);
+            startActivity(v);
         }
 
         return super.onOptionsItemSelected(item);
@@ -128,21 +129,21 @@ public class Profile extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_home) {
-            Intent intent = new Intent(Profile.this,Main_Home.class);
-            intent.putExtra( "email",get_email );
-            intent.putExtra( "user",get_user );
-            startActivity( intent );
-        }else if (id == R.id.nav_camera) {
-            if (get_user.equals( "hospital" )){
-                Intent intent = new Intent( Profile.this, Hospital_post.class );
-                intent.putExtra( "email", get_email );
-                intent.putExtra( "user", get_user );
-                startActivity( intent );
-            }else {
-                Intent intent = new Intent( Profile.this, Home.class );
-                intent.putExtra( "email", get_email );
-                intent.putExtra( "user", get_user );
-                startActivity( intent );
+            Intent intent = new Intent(Profile.this, Main_Home.class);
+            intent.putExtra("email", get_email);
+            intent.putExtra("user", get_user);
+            startActivity(intent);
+        } else if (id == R.id.nav_camera) {
+            if (get_user.equals("hospital")) {
+                Intent intent = new Intent(Profile.this, Hospital_post.class);
+                intent.putExtra("email", get_email);
+                intent.putExtra("user", get_user);
+                startActivity(intent);
+            } else {
+                Intent intent = new Intent(Profile.this, Home.class);
+                intent.putExtra("email", get_email);
+                intent.putExtra("user", get_user);
+                startActivity(intent);
             }
         } else if (id == R.id.nav_gallery) {
 //            Intent intent = new Intent(Profile.this,Profile.class);
@@ -150,30 +151,31 @@ public class Profile extends AppCompatActivity
 //            intent.putExtra( "user",get_user );
 //            startActivity( intent );
         } else if (id == R.id.nav_slideshow) {
-            Intent intent = new Intent(Profile.this,Reports.class);
-            intent.putExtra( "email",get_email );
-            intent.putExtra( "user",get_user );
-            startActivity( intent );
-        }else if (id == R.id.make_notification) {
-            if (get_user.equals( "hospital" )) {
-                Intent intent = new Intent( Profile.this, Make_Notification1.class );
-                intent.putExtra( "email", get_email );
-                intent.putExtra( "user", get_user );
-                startActivity( intent );
-            }else {
-                Toast.makeText( Profile.this,"This Option Available For Hospital Only",Toast.LENGTH_SHORT ).show();
+            Intent intent = new Intent(Profile.this, Reports.class);
+            intent.putExtra("email", get_email);
+            intent.putExtra("user", get_user);
+            startActivity(intent);
+        } else if (id == R.id.make_notification) {
+            if (get_user.equals("hospital")) {
+                Intent intent = new Intent(Profile.this, Make_Notification1.class);
+                intent.putExtra("email", get_email);
+                intent.putExtra("user", get_user);
+                startActivity(intent);
+            } else {
+                Toast.makeText(Profile.this, "This Option Available For Hospital Only", Toast.LENGTH_SHORT).show();
             }
         } else if (id == R.id.nav_manage) {
-            Intent intent = new Intent(Profile.this,About.class);
-            intent.putExtra( "email",get_email );
-            intent.putExtra( "user",get_user );
-            startActivity( intent );
+            Intent intent = new Intent(Profile.this, About.class);
+            intent.putExtra("email", get_email);
+            intent.putExtra("user", get_user);
+            startActivity(intent);
         } else if (id == R.id.nav_share) {
 
         } else if (id == R.id.nav_send) {
             Intent intent = new Intent(Profile.this, MainActivity.class);
-            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
-            database.UpdateData( "1",get_email,"0",get_user );
+            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+            database.UpdateData("1", get_email, "0", get_user, "0", "no", "0");
+            stopService(new Intent(Profile.this, NotificationService.class));
             startActivity(intent);
         }
 

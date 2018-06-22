@@ -74,7 +74,7 @@ public class Point_Adapter extends RecyclerView.Adapter<Point_Adapter.ViewHolder
         holder.tim.setText(noti_item.getTime());
         holder.nam.setText(noti_item.getName());
         holder.body.setText(noti_item.getBody());
-        holder.spon.setText(noti_item.getSpon());
+//        holder.spon.setText(noti_item.getSpon());
 //        holder.don.setOnClickListener(new View.OnClickListener() {
 //            @Override
 //            public void onClick(View v) {
@@ -154,14 +154,14 @@ public class Point_Adapter extends RecyclerView.Adapter<Point_Adapter.ViewHolder
 
     public class ViewHolder extends RecyclerView.ViewHolder{
 
-        public TextView tim, body, nam, spon;
+        public TextView tim, body, nam;
         Button map, share;
         public ViewHolder(View itemView) {
             super(itemView);
             tim = (TextView)itemView.findViewById(R.id.point_tim);
             body = (TextView)itemView.findViewById(R.id.point_bod);
             nam = (TextView)itemView.findViewById(R.id.point_hos_nam);
-            spon = (TextView)itemView.findViewById(R.id.point_spon);
+//            spon = (TextView)itemView.findViewById(R.id.point_spon);
             map = (Button)itemView.findViewById(R.id.point_map);
             share = (Button)itemView.findViewById(R.id.point_share);
         }
