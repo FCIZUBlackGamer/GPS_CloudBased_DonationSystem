@@ -95,6 +95,13 @@ public class Hospital_post extends AppCompatActivity
                         Snackbar.make(view, "No Session Started Yet!", Snackbar.LENGTH_LONG)
                                 .setAction("Action", null).show();
                     } else {
+                        if (get_value.equals("دم"))
+                            get_value = "blood";
+                        else if (get_value.equals("نقود"))
+                            get_value = "money";
+                        else if (get_value.equals("أخرى"))
+                            get_value = "other";
+
                         LoadRecyclerViewData(get_email, get_value);
                     }
 //                } else {

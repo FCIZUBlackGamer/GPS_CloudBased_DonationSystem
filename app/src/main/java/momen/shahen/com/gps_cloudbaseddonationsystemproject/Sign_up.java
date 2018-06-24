@@ -69,13 +69,13 @@ public class Sign_up extends AppCompatActivity {
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 text = spinner.getSelectedItem().toString();
 
-                if (text.equals("Hospital")) {
+                if (text.equals("Hospital") || text.equals("مستشفى")) {
                     fragmentManager = getSupportFragmentManager();
                     transaction = fragmentManager.beginTransaction();
                     newFragment = new Hosp_frag();
                     transaction.replace(R.id.frag_don_hosp, newFragment).commit();
 
-                } else if (text.equals("Donor")) {
+                } else if (text.equals("Donor") || text.equals("متبرع")) {
                     fragmentManager = getSupportFragmentManager();
                     transaction = fragmentManager.beginTransaction();
                     newFragment = new donor_frag();

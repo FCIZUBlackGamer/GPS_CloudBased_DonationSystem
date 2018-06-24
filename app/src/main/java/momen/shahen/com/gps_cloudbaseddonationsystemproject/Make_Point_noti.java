@@ -38,13 +38,13 @@ import static com.google.android.gms.internal.zzahn.runOnUiThread;
 
 public class Make_Point_noti extends Fragment {
 
-    EditText cont,spon;
+    EditText cont;
     Button button;
     Bundle bundle;
     Activity context;
     String url;
     String getemail;
-    String emailkey, contentkey, sponserkey;
+    String emailkey, contentkey;
     Cursor cursor;
     Database database;
     @Override

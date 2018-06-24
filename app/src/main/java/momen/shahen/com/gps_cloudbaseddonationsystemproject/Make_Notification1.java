@@ -191,7 +191,7 @@ public class Make_Notification1 extends AppCompatActivity
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 text = spinner.getSelectedItem().toString();
 
-                if (text.equals("blood")) {
+                if (text.equals("blood") || text.equals("دم")) {
                     for (Fragment fragment : getSupportFragmentManager().getFragments()) {
                         getSupportFragmentManager().beginTransaction().remove(fragment).commit();
                     }
@@ -200,7 +200,7 @@ public class Make_Notification1 extends AppCompatActivity
                     newFragment = new Make_Blood_noti();
                     transaction.replace(R.id.noti_type, newFragment).commit();
 
-                } else if (text.equals("money")) {
+                } else if (text.equals("money") || text.equals("نقود")) {
                     for (Fragment fragment : getSupportFragmentManager().getFragments()) {
 
                         getSupportFragmentManager().beginTransaction().remove(fragment).commit();
@@ -210,7 +210,7 @@ public class Make_Notification1 extends AppCompatActivity
                     newFragment = new Make_money_noti();
                     transaction.replace(R.id.noti_type, newFragment).commit();
 
-                } else if (text.equals("other")) {
+                } else if (text.equals("other") || text.equals("أخرى")) {
                     for (Fragment fragment : getSupportFragmentManager().getFragments()) {
 
                         getSupportFragmentManager().beginTransaction().remove(fragment).commit();
