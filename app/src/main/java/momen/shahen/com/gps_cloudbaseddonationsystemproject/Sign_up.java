@@ -136,8 +136,8 @@ public class Sign_up extends AppCompatActivity {
                             public void run() {
                                 Toast.makeText(Sign_up.this, result, Toast.LENGTH_LONG).show();
                                 if (result.equals(" User Add Successfuly ")) {
-
                                     startActivity(new Intent(Sign_up.this, MainActivity.class));
+//                                    Sign_up.super.onDestroy();
                                 } else {
 
                                 }
@@ -188,7 +188,7 @@ public class Sign_up extends AppCompatActivity {
                                             progressDialog.dismiss();
                                             Toast.makeText(Sign_up.this, response, Toast.LENGTH_LONG).show();
                                             if (response.equals(" User Add Successfuly ")) {
-//                                                startActivity(new Intent(Sign_up.this, MainActivity.class));
+                                                startActivity(new Intent(Sign_up.this, MainActivity.class));
                                             } else {
 
                                             }
