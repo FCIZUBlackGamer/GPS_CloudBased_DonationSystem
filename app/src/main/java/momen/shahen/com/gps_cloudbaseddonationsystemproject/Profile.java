@@ -50,21 +50,7 @@ public class Profile extends AppCompatActivity
 
         }
 
-        if (get_user.equals("donor")) {
-            fragmentManager = getSupportFragmentManager();
-            transaction = fragmentManager.beginTransaction();
-            newFragment = new Prof_don();
-            transaction.replace(R.id.prof_frag, newFragment).commit();
 
-        } else if (get_user.equals("hospital")) {
-            fragmentManager = getSupportFragmentManager();
-            transaction = fragmentManager.beginTransaction();
-            newFragment = new Prof_hosp();
-            transaction.replace(R.id.prof_frag, newFragment).commit();
-
-        } else {
-
-        }
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -84,7 +70,27 @@ public class Profile extends AppCompatActivity
         toggle.syncState();
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+
         navigationView.setNavigationItemSelectedListener(this);
+
+        if (get_user.equals("donor")) {
+            fragmentManager = getSupportFragmentManager();
+            transaction = fragmentManager.beginTransaction();
+            newFragment = new Prof_don();
+            transaction.replace(R.id.prof_frag, newFragment).commit();
+            Menu nav_Menu = navigationView.getMenu();
+            nav_Menu.findItem(R.id.make_notification).setVisible(false);
+
+        } else if (get_user.equals("hospital")) {
+            fragmentManager = getSupportFragmentManager();
+            transaction = fragmentManager.beginTransaction();
+            newFragment = new Prof_hosp();
+            transaction.replace(R.id.prof_frag, newFragment).commit();
+
+
+        } else {
+
+        }
     }
 
     @Override

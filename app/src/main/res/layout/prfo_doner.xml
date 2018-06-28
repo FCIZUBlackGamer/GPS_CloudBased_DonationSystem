@@ -75,7 +75,7 @@
                 android:inputType="none"
                 android:id="@+id/prof_don_email"
                 android:layout_marginLeft="20dp"
-                android:textColor="@color/colorPrimaryDark"
+                android:textColor="@color/colorPrimary"
                 android:textColorHint="@color/colorPrimaryDark"/>
         </LinearLayout>
         <LinearLayout
@@ -99,7 +99,7 @@
                 android:inputType="none"
                 android:id="@+id/prof_don_age"
                 android:layout_marginLeft="20dp"
-                android:textColor="@color/colorPrimaryDark"
+                android:textColor="@color/colorPrimary"
                 android:textColorHint="@color/colorPrimaryDark"/>
         </LinearLayout>
         <LinearLayout
@@ -123,7 +123,7 @@
                 android:inputType="none"
                 android:id="@+id/prof_don_last_don"
                 android:layout_marginLeft="20dp"
-                android:textColor="@color/colorPrimaryDark"
+                android:textColor="@color/colorPrimary"
                 android:textColorHint="@color/colorPrimaryDark"/>
         </LinearLayout>
 

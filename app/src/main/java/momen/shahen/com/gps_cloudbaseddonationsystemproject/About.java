@@ -60,6 +60,12 @@ public class About extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        if (get_user.equals("donor")) {
+            Menu nav_Menu = navigationView.getMenu();
+            nav_Menu.findItem(R.id.make_notification).setVisible(false);
+
+        }
     }
 
     @Override
