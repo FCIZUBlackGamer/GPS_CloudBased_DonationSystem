@@ -71,7 +71,6 @@ public class MainActivity extends Activity {
             }
         }
 
-        intent = new Intent(MainActivity.this, Main_Home.class);
         donn = (Button) findViewById(R.id.donne);
         donn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -94,6 +93,7 @@ public class MainActivity extends Activity {
                                     @Override
                                     public void run() {
 
+                                        intent = new Intent(MainActivity.this, Main_Home.class);
                                         intent.putExtra("email", au);
                                         intent.putExtra("user", type);
                                         Toast.makeText(MainActivity.this, response, Toast.LENGTH_LONG).show();
@@ -145,6 +145,8 @@ public class MainActivity extends Activity {
                                 runOnUiThread(new Runnable() {
                                     @Override
                                     public void run() {
+                                        progressDialog.dismiss();
+                                        intent = new Intent(MainActivity.this, Main_Home.class);
                                         intent.putExtra("email", au);
                                         intent.putExtra("user", type);
                                         Toast.makeText(MainActivity.this, response, Toast.LENGTH_LONG).show();
@@ -152,7 +154,7 @@ public class MainActivity extends Activity {
                                                 Log.e("CHECKED", "Remember me");
                                                 database.UpdateData("1", au, "1", type, "0", "yes", "0");
                                             startActivity(intent);
-                                            progressDialog.dismiss();
+
                                         }
                                     }
                                 });

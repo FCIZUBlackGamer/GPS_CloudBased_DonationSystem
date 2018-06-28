@@ -84,18 +84,19 @@ public class Prof_hosp extends Fragment {
 //        email = "momen.shaeen2020@gmail.com";
         final ProgressDialog progressDialog = new ProgressDialog(getActivity());
         progressDialog.setMessage("Loading Data ...");
+        progressDialog.setCancelable(false);
         progressDialog.show();
 
         StringRequest stringRequest = new StringRequest( Request.Method.POST, "https://gradproject2018.000webhostapp.com/Donation%20System/GetHospitalData.php",
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
-                        try {
-                            String s = URLEncoder.encode(response,"ISO-8859-1");
-                            response = URLDecoder.decode(s,"UTF-8");
-                        }catch (UnsupportedEncodingException e){
-                            e.printStackTrace();
-                        }
+//                        try {
+//                            String s = URLEncoder.encode(response,"ISO-8859-1");
+//                            response = URLDecoder.decode(s,"UTF-8");
+//                        }catch (UnsupportedEncodingException e){
+//                            e.printStackTrace();
+//                        }
                         progressDialog.dismiss();
                         try {
                             JSONObject jsonObject = new JSONObject(response);

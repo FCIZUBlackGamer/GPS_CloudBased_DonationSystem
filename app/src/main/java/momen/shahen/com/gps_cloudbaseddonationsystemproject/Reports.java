@@ -165,12 +165,6 @@ public class Reports extends AppCompatActivity
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
-                        try {
-                            String s = URLEncoder.encode(response, "ISO-8859-1");
-                            response = URLDecoder.decode(s, "UTF-8");
-                        } catch (UnsupportedEncodingException e) {
-                            e.printStackTrace();
-                        }
                         progressDialog.dismiss();
                         try {
                             JSONObject jsonObject = new JSONObject(response);

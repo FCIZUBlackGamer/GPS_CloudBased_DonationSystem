@@ -51,7 +51,7 @@
                 android:inputType="none"
                 android:id="@+id/prof_hosp_name"
                 android:layout_marginLeft="20dp"
-                android:textColor="@color/colorPrimaryDark"
+                android:textColor="@color/colorPrimary"
                 android:textColorHint="@color/colorPrimaryDark"/>
         </LinearLayout>
         <LinearLayout
@@ -75,7 +75,7 @@
                 android:inputType="none"
                 android:id="@+id/prof_hosp_email"
                 android:layout_marginLeft="20dp"
-                android:textColor="@color/colorPrimaryDark"
+                android:textColor="@color/colorPrimary"
                 android:textColorHint="@color/colorPrimaryDark"/>
         </LinearLayout>
         <LinearLayout
@@ -99,7 +99,7 @@
                 android:inputType="none"
                 android:id="@+id/prof_hosp_city_name"
                 android:layout_marginLeft="20dp"
-                android:textColor="@color/colorPrimaryDark"
+                android:textColor="@color/colorPrimary"
                 android:textColorHint="@color/colorPrimaryDark"/>
         </LinearLayout>
     </LinearLayout>

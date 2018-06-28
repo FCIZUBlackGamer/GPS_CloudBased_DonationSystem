@@ -34,9 +34,9 @@ public class Main_Home extends AppCompatActivity
         setSupportActionBar(toolbar);
 
         startService(new Intent(Main_Home.this, NotificationService.class));
-        intent = getIntent();
-        get_email = intent.getStringExtra("email");
-        get_user = intent.getStringExtra("user");
+//        intent = getIntent();
+//        get_email = intent.getStringExtra("email");
+//        get_user = intent.getStringExtra("user");
 
         database = new Database(this);
         cursor = database.ShowData();

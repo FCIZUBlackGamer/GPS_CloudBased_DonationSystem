@@ -82,8 +82,9 @@ public class Hospital_AllPosts_Adapter extends RecyclerView.Adapter<Hospital_All
                 final Spinner spin = new Spinner( context );
                 final EditText doc_name = new EditText( context );
                 post.setHint( "Help innocent people!" );
-                post.setTextColor( R.color.colorPrimaryDark );
-                post.setHintTextColor( R.color.colorPrimaryDark );
+//                post.setTextColor( R.color.colorPrimary );
+//                post.setHintTextColor( R.color.colorPrimary );
+//                post.setBackgroundColor(R.color.back);
                 linearLayout.setOrientation( LinearLayout.VERTICAL );
                 if (blood_noti.getType().equals("blood")){
 
@@ -95,19 +96,20 @@ public class Hospital_AllPosts_Adapter extends RecyclerView.Adapter<Hospital_All
                             android.R.layout.simple_list_item_1, list);
                     adp1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
                     spin.setAdapter(adp1);
+//                    spin.setBackgroundColor(R.color.back);
 
                     linearLayout.addView( spin );
 
                     doc_name.setHint( "Doctor Name" );
-                    doc_name.setTextColor( R.color.black );
-                    doc_name.setHintTextColor( R.color.black );
-                    linearLayout.setBackgroundColor(R.color.white);
+//                    doc_name.setTextColor();
+//                    doc_name.setBackgroundColor(R.color.back);
+//                    doc_name.setHintTextColor( R.color.colorPrimary );
+//                    linearLayout.setBackgroundColor(R.color.back);
                     linearLayout.addView( doc_name );
                 }
 
                 linearLayout.addView( post );
                 //linearLayout.setBackgroundColor( R.color.back );
-
 
 
                 AlertDialog.Builder builder;
@@ -125,7 +127,7 @@ public class Hospital_AllPosts_Adapter extends RecyclerView.Adapter<Hospital_All
                                 final ProgressDialog progressDialog = new ProgressDialog( context );
                                 progressDialog.setMessage( "Updating Post ... " );
                                 progressDialog.show();
-                                StringRequest stringRequest = new StringRequest( Request.Method.POST, "https://gradproject2018.000webhostapp.com/Donation%20System/UpdatePosts.php",
+                                StringRequest stringRequest = new StringRequest( Request.Method.POST, "https://gradproject2018.000webhostapp.com/Donation%20System/Updatepost.php",
                                         new Response.Listener<String>() {
                                             @Override
                                             public void onResponse(final String response) {
@@ -168,6 +170,7 @@ public class Hospital_AllPosts_Adapter extends RecyclerView.Adapter<Hospital_All
                         })
                         .setIcon(android.R.drawable.ic_dialog_alert)
                         .show();
+
             }
         } );
         holder.delete.setOnClickListener( new View.OnClickListener() {

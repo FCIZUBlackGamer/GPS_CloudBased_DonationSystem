@@ -83,6 +83,12 @@ public class Settings_activity extends Activity implements View.OnClickListener,
         toggleButton = findViewById(R.id.change_state);
         if (toggleButton != null) {
             toggleButton.setOnCheckedChangeListener(this);
+            toggleButton.setChecked(true);
+            if(toggleButton.isChecked()){
+                startService(new Intent(Settings_activity.this, NotificationService.class));
+            }else {
+                stopService(new Intent(Settings_activity.this, NotificationService.class));
+            }
         }
         change_pass = (Button) findViewById( R.id.change_pass );
         get_email = intent.getStringExtra( "email" );

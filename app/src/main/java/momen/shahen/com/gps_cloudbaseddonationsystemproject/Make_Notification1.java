@@ -495,10 +495,17 @@ public class Make_Notification1 extends AppCompatActivity
             intent.putExtra("user", get_user);
             startActivity(intent);
         } else if (id == R.id.nav_camera) {
-            Intent intent = new Intent(Make_Notification1.this, Home.class);
-            intent.putExtra("email", get_email);
-            intent.putExtra("user", get_user);
-            startActivity(intent);
+            if (get_user.equals("donor")) {
+                Intent intent = new Intent(Make_Notification1.this, Home.class);
+                intent.putExtra("email", get_email);
+                intent.putExtra("user", get_user);
+                startActivity(intent);
+            } else {
+                Intent intent = new Intent(Make_Notification1.this, Hospital_post.class);
+                intent.putExtra("email", get_email);
+                intent.putExtra("user", get_user);
+                startActivity(intent);
+            }
         } else if (id == R.id.nav_gallery) {
             Intent intent = new Intent(Make_Notification1.this, Profile.class);
             intent.putExtra("email", get_email);
