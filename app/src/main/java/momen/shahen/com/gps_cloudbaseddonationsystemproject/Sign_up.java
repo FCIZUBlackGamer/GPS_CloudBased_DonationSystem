@@ -134,8 +134,8 @@ public class Sign_up extends AppCompatActivity {
                         runOnUiThread(new Runnable() {
                             @Override
                             public void run() {
-                                Toast.makeText(Sign_up.this, result, Toast.LENGTH_LONG).show();
                                 if (result.equals(" User Add Successfuly ")) {
+                                    Toast.makeText(Sign_up.this, "You'll Receive an Email Message", Toast.LENGTH_LONG).show();
                                     startActivity(new Intent(Sign_up.this, MainActivity.class));
 //                                    Sign_up.super.onDestroy();
                                 } else {

@@ -95,7 +95,7 @@ public class Send_report extends AppCompatActivity {
         else {
             while (cursor.moveToNext()) {
 
-                if (cursor.getString(3).equals("HOSPITAL")) {
+                if (cursor.getString(3).equals("hospital")) {
                     hosp_email = cursor.getString(1);
                 }else {
                     hosp_email = null;
